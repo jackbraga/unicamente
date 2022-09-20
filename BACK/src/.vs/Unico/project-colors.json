@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9f07b9b7-0f95-4d42-8f48-bc6863ebaa98": {
+      "ProjectGuid": "9f07b9b7-0f95-4d42-8f48-bc6863ebaa98",
+      "DisplayName": "Unico.Application",
+      "ColorIndex": 0
+    },
+    "ceb83871-a9b5-4fe2-bf08-18164f210667": {
+      "ProjectGuid": "ceb83871-a9b5-4fe2-bf08-18164f210667",
+      "DisplayName": "Unico.Domain",
+      "ColorIndex": 1
+    },
+    "5c45e4d4-5b17-4b73-8664-1efe5a734b7d": {
+      "ProjectGuid": "5c45e4d4-5b17-4b73-8664-1efe5a734b7d",
+      "DisplayName": "Unico.API",
+      "ColorIndex": 2
+    },
+    "39ee6529-16f8-4356-b89a-cbbdfb630d37": {
+      "ProjectGuid": "39ee6529-16f8-4356-b89a-cbbdfb630d37",
+      "DisplayName": "Unico.Infra.IoC",
+      "ColorIndex": 3
+    },
+    "9b5a891d-6200-4884-ab11-94d97eb3acbc": {
+      "ProjectGuid": "9b5a891d-6200-4884-ab11-94d97eb3acbc",
+      "DisplayName": "Unico.Infra.Data",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "31139318-73fe-428c-93db-0b637ccd494b": {
+      "ProjectGuid": "31139318-73fe-428c-93db-0b637ccd494b",
+      "DisplayName": "Unico.Services",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

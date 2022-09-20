@@ -1,0 +1,15 @@
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\Unico.Application.deps.json
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\Unico.Application.dll
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\ref\Unico.Application.dll
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\Unico.Application.pdb
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\Unico.Domain.dll
+C:\UDV\Unico\BACK\src\Unico.Application\bin\Release\net6.0\Unico.Domain.pdb
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.csproj.AssemblyReference.cache
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.AssemblyInfoInputs.cache
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.AssemblyInfo.cs
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.csproj.CoreCompileInputs.cache
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.csproj.CopyComplete
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.dll
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\ref\Unico.Application.dll
+C:\UDV\Unico\BACK\src\Unico.Application\obj\Release\net6.0\Unico.Application.pdb

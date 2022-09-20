@@ -1,0 +1,12 @@
+C:\UDV\Unico\BACK\src\Unico.Domain\bin\Release\net6.0\Unico.Domain.deps.json
+C:\UDV\Unico\BACK\src\Unico.Domain\bin\Release\net6.0\Unico.Domain.dll
+C:\UDV\Unico\BACK\src\Unico.Domain\bin\Release\net6.0\ref\Unico.Domain.dll
+C:\UDV\Unico\BACK\src\Unico.Domain\bin\Release\net6.0\Unico.Domain.pdb
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.csproj.AssemblyReference.cache
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.AssemblyInfoInputs.cache
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.AssemblyInfo.cs
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.csproj.CoreCompileInputs.cache
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.dll
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\ref\Unico.Domain.dll
+C:\UDV\Unico\BACK\src\Unico.Domain\obj\Release\net6.0\Unico.Domain.pdb
