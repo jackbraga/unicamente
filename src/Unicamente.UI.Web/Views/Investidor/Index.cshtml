@@ -1,0 +1,277 @@
+﻿@model Unicamente.Application.DTOs.InvestidorDTO
+
+@{
+    ViewData["Title2"] = "Área do Investidor";
+    Layout = "~/Views/Shared/_LayoutB.cshtml";
+}
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+        @* <h1 class="logo me-auto"><a href="index.html">Oskem<span>.</span></a></h1> *@
+        <a class="me-auto" asp-action="Index"><img class="logo me-auto" src="~/img/logo-oskem-fundo-branco.png" /></a>
+        @* <spam style="font-weight: bold">@Model.Nome</spam> *@
+        <!-- ======= Navigation Bar ======= -->
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li class="dropdown">
+                    <a href="#"><spam style="font-weight: bold">@Model.Nome</spam> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a asp-action="MinhaConta">Minha conta</a></li>
+                        <li><a asp-action="Index_Sidebar">Sidebar</a></li>
+                        <li><a href="">Segurança</a></li>
+                        <li><a href="#">Excluir Conta</a></li>
+                        <li><a asp-action="Logout">Logout</a></li>
+                    </ul>
+                </li>
+                @* <li><a href="/Inves">Logout</a></li> *@
+                @* <li><a asp-action="Logout">Logout</a></li> *@
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+        <!-- ======= Residence Detail ======= -->
+        <div id="residence-detail" class="modal" style="display: none">
+            <spam onclick="displaycontrolFunction('residence-detail')" class="close" title="Close Modal">&times;</spam>
+
+            <form action="/action_page.php" class="modal-content-residence animate">
+                <div class="form-container">
+                    <h4>Perspectiva do Imóvel Selecionado</h4>
+                    <div class="slideshow-container">
+                        <div class="slideshow-mySlides slideshow-fade">
+                            <img src="~/img/paisagem1.jpg" style="width:100%">
+                            <div class="slideshow-text">Caption Text</div>
+                        </div>
+
+                        <div class="slideshow-mySlides slideshow-fade">
+                            <img src="~/img/paisagem2.jpg" style="width:100%">
+                            <div class="slideshow-text">Caption Two</div>
+                        </div>
+
+                        <div class="slideshow-mySlides slideshow-fade">
+                            <img src="~/img/paisagem3.jpg" style="width:100%">
+                            <div class="slideshow-text">Caption Three</div>
+                        </div>
+
+                        <a class="slideshow-prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="slideshow-next" onclick="plusSlides(1)">❯</a>
+
+                    </div>
+                    <br>
+
+                    <div style="text-align:center">
+                        <span class="slideshow-dot" onclick="currentSlide(1)"></span>
+                        <span class="slideshow-dot" onclick="currentSlide(2)"></span>
+                        <span class="slideshow-dot" onclick="currentSlide(3)"></span>
+                    </div>
+
+                    <h4>Informações do Imóvel Selecionado</h4>
+                    <div class="form-row tab-content">
+                        <div class="form-column">
+                            <label for="residence"><b>Imóvel</b></label>
+                            <input type="text" name="residence" style="background: lightgray" disabled>
+                        </div>
+                        <div class="form-column">
+                            <label for="unit"><b>Unidade</b></label>
+                            <input type="text" name="unit" style="background: lightgray" disabled>
+                        </div>
+                        <div class="form-column">
+                            <label for="quota">Selecione a Cota:</label>
+                            <select name="quota" id="quota">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="form-column">
+                            <label for="registration"><b>Matrícula</b></label>
+                            <input type="text" name="registration" style="background: lightgray" disabled>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Informações da Imobiliária</h4>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="realestate"><b>Imobiliária</b></label>
+                            <input type="text" name="realestate" style="background: lightgray" disabled>
+                        </div>
+                        <div class="form-column">
+                            <label for="creci"><b>CRECI</b></label>
+                            <input type="text" name="creci" style="background: lightgray" disabled>
+                        </div>
+                        <div class="form-column">
+                            <label for="phone"><b>Telefone</b></label>
+                            <input type="text" name="phone" style="background: lightgray" disabled>
+                        </div>
+                        <div class="form-column">
+                            <label for="email"><b>e-mail</b></label>
+                            <input type="text" name="email" style="background: lightgray" disabled>
+                        </div>
+                    </div>
+
+                    <div style="text-align: right">
+                        <button type="submit" class="ok-btn" style="width: auto">Reservar</button>
+                        <button type="button" class="cancel-btn" style="padding: 14px 18px;" onclick="document.getElementById('residence-detail').style.display='none'">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- ======= End Residence Detail ======= -->
+
+    </div>
+</header>
+<!-- ======= End Header ======= -->
+<!-- ======= Hero Section ======= -->
+<section id="hero2" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row">
+            <div class="col-xl-10">
+                <a href="#quotas" onclick="displaycontrolFunction('quotas')" class="btns scrollto">Minhas Cotas</a>
+                <a href="#reservations" onclick="displaycontrolFunction('reservations')" class="btns scrollto">Cotas Reservadas</a>
+                <a href="#portfolio" onclick="displaycontrolFunction('portfolio')" class=" btns scrollto">Adquirir Cotas</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Hero -->
+<!-- ======= Main ======= -->
+<main id="main">
+
+    <partial name="_Quotas.cshtml" />
+
+    <partial name="_Reservations.cshtml" />
+
+    <partial name="_Portfolio.cshtml" />
+
+    @* } *@
+    <!-- End Portfolio Section -->
+    <!-- ======= Script Area ======= -->
+    <script>
+        // ======= Get Modal =======
+        var modalresidence = document.getElementById('residence-detail');
+
+        // ======= Close Modal When The User Clicks Anywhere Outside =======
+        window.onclick = function (event) {
+            if (event.target == modalresidence) {
+                modalresidence.style.display = "none";
+            }
+        }
+
+        function displaycontrolFunction(parm) {
+            var x = document.getElementById(parm);
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+
+                if (parm == "portfolio") {
+                    $("#exibirTodos").click();
+                }
+
+            } else {
+                x.style.display = "none";
+
+                if (parm == "portfolio") {
+                    if ($("#image_map").css("display") == "block") {
+                        $("#image_map").css("display", "none");
+                    }
+                }
+            }
+        }
+
+        // ======= Slideshow Controller =======
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slideshow-mySlides");
+            let dots = document.getElementsByClassName("slideshow-dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" slideshow-active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " slideshow-active";
+        }
+
+        function excluircotaFunction(cota) {
+            Swal.fire({
+                title: "Atenção!",
+                text: "Deseja realmente excluir a reserva da cota " + cota + "?",
+                icon: "warning",
+                showDenyButton: true,
+                confirmButtonText: "Excluir",
+                confirmButtonColor: "#38be3b",
+                denyButtonText: "Cancelar",
+                denyButtonColor: "#f44336"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Excluído!",
+                        text: "Sua cota " + cota + " foi excluída :(",
+                        icon: "success",
+                        confirmButtonText: "Fechar",
+                        confirmButtonColor: "#38be3b"
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire({
+                        title: "Cancelado!",
+                        text: "Sua cota " + cota + " está a salvo :)",
+                        icon: "error",
+                        confirmButtonText: "Fechar",
+                        confirmButtonColor: "#38be3b"
+                    });
+                }
+            })
+        }
+
+
+        function downloadFunction(parm) {
+            Swal.fire({
+                icon: "info",
+                showConfirmButton: false,
+                showCancelButton: true,
+                cancelButtonText: "Fechar",
+                cancelButtonColor: "#38be3b",
+                html: `<p>Clique <i class="material-icons">cloud_download</i> para fazer download do arquivo</p>
+                                            <table id="arquivos" style="width: 100%; border-collapse: collapse; font-size: 14px">
+                                                <tr style="color: white; background-color: #193a94;">
+                                                    <th style="border: 1px solid #193a94; text-align: left; padding: 8px;">Arquivo</th>
+                                                    <th style="border: 1px solid #193a94; text-align: left; padding: 8px;"><i class="material-icons">cloud_download</i></th>
+                                                </tr>
+                                                <tr style="background-color: #eef3ee;">
+                                                    <td style="border: 1px solid #eef3ee; text-align: left; padding: 8px;">Proposta Inicial.pdf</td>
+                                                    <td style="border: 1px solid #eef3ee; text-align: left; padding: 8px;">
+                                                        <a class="download" href="~/img/portfolio/portfolio-7.jpg" download><i class="material-icons">cloud_download</i></a>
+                                                    </td>
+                                                </tr>
+                                               <tr style="background-color: #eef3ee;">
+                                                    <td style="border: 1px solid #eef3ee; text-align: left; padding: 8px;">Contrato.pdf</td>
+                                                    <td style="border: 1px solid #eef3ee; text-align: left; padding: 8px;">
+                                                        <a class="download" href="~/img/portfolio/portfolio-8.jpg" download><i class="material-icons">cloud_download</i></a>
+                                                    </td>
+                                                </tr>
+                                            </table>`
+            })
+        }
+
+
+    </script>
+</main>
+<!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

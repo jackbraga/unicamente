@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Unicamente.UI.Web.Models.ImobiliariaViewModel>
+
+<div class="container" style="padding: 0;">
+    <p style="text-align: left"><a onclick="formularioImob()" style="cursor: pointer"><strong><i class="material-symbols-outlined">add</i> Incluir Imobiliária</strong></a></p>
+    <ul class="responsive-table" style="padding: 0">
+        <li class="table-header">
+            <div class="col coluna-1-imob">Nome Fantasia</div>
+            <div class="col coluna-2-imob">CNPJ</div>
+            <div class="col coluna-3-imob">Responsável</div>
+            <div class="col coluna-4-imob">E-mail</div>
+            <div class="col coluna-5-imob">Detalhes</div>
+            @* <div class="col coluna-6-imob"><i class="material-symbols-outlined"><strong>badge</strong></i></div> *@
+        </li>
+        @foreach (var imob in Model)
+        {
+            <li class="table-row">
+
+                <div class="col coluna-1-imob" style="text-align: left;"><span class="table-label">Imobiliária:&nbsp;</span>@imob.RazaoSocial</div>
+                <div class="col coluna-2-imob" style="text-align: left;"><span class="table-label">CNPJ:&nbsp;</span>@imob.CNPJ</div>
+                <div class="col coluna-3-imob" style="text-align: left;"><span class="table-label">Responsável:&nbsp;</span>@imob.NomeResponsavel</div>
+                <div class="col coluna-4-imob" style="text-align: left;"><span class="table-label">e-mail:&nbsp;</span>@imob.Email</div>
+                <div class="col coluna-5-imob"><a onclick="detalheImobiliaria(@imob.ID)"><i class="material-symbols-outlined info"><strong>manage_search</strong></i></a></div>
+                @* <div class="col coluna-6-imob"><a onclick="brokerFunction()"><i class="material-symbols-outlined broker"><strong>badge</strong></i></a></div> *@
+            </li>
+
+        }
+
+    </ul>
+
+</div>
+
+                

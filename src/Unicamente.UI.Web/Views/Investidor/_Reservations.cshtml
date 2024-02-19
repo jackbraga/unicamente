@@ -1,0 +1,123 @@
+﻿<section id="reservations" class="reservations" style="padding: 0">
+    
+    <div class="container" data-aos="fade-up" style="padding: 0">
+
+        <div class="section-title">
+            <h2>Cotas Reservadas</h2>
+
+            <!-- Implementar IF para vrtificar se possui cotas -->
+            <!--
+            <div style="width: 100%; height: 70vh; background: url('../img/adquira.png') top center no-repeat; background-size: cover; position: relative;">
+                <div style="top: 100px; position: relative; display: table; margin: 0 auto;">
+                    <h3 style="color: #fff">Não perca tempo!</h3>
+                    <h3 style="color: #fff"><b><a id="invest-link" href="#portfolio" onclick="portfolioFunction()">Invista agora</a></b></h3>
+                    <h3 style="color: #fff">no seu imóvel de férias!</h3>
+                </div>
+            </div>
+            -->
+
+            <p>A aquisição deve ser efetivada junto ao corretor credenciado até a data limite da reserva.</p>
+            <p>Caso a aquisição não seja efetivada no prazo, a cota será disponibilizada para venda.</p>
+            <p>Para acessar os dados da imobiliária responsável, clique <i class="material-symbols-outlined"><strong>info</strong></i></p>
+            <p>Para excluir a reserva da cota, clique <i class="material-symbols-outlined"><strong>delete</strong></i></p>
+        </div>
+
+        <div class="container" style="padding: 0">
+            <ul class="responsive-table" style="padding: 0">
+                <li class="table-header">
+                    <div class="col coluna-1-reserv">Empreendimento</div>
+                    <div class="col coluna-2-reserv">Imóvel</div>
+                    <div class="col coluna-3-reserv">Unidade</div>
+                    <div class="col coluna-4-reserv">Cota n°</div>
+                    <div class="col coluna-5-reserv">Expira Em</div>
+                    <div class="col coluna-6-reserv"><i class="material-symbols-outlined"><strong>info</strong></i></div>
+                    <div class="col coluna-7-reserv"><i class="material-symbols-outlined"><strong>delete</strong></i></div>
+                </li>
+                <li class="table-row">
+                    <div class="col coluna-1-reserv"><span class="table-label">Empreendimento:&nbsp;</span>Villaggio Alcântara</div>
+                    <div class="col coluna-2-reserv"><span class="table-label">Imóvel:&nbsp;</span>Cabana Luxo</div>
+                    <div class="col coluna-3-reserv"><span class="table-label">Unidade:&nbsp;</span>2</div>
+                    <div class="col coluna-4-reserv"><span class="table-label">Cota N°:&nbsp;</span>10</div>
+                    <div class="col coluna-5-reserv"><span class="table-label">Expira Em:&nbsp;</span>10/11/2023</div>
+                    <div class="col coluna-6-reserv"><a onclick="informationFunction('cota 1')"><i class="material-symbols-outlined info"><strong>info</strong></i></a></div>
+                    <div class="col coluna-7-reserv"><a onclick="excluircotaFunction(this.parentNode.parentNode.id)"><i class="material-symbols-outlined trash"><strong>delete</strong></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col coluna-1-reserv"><span class="table-label">Empreendimento:&nbsp;</span>Dorf Hermann</div>
+                    <div class="col coluna-2-reserv"><span class="table-label">Imóvel:&nbsp;</span>Chalé Supreme</div>
+                    <div class="col coluna-3-reserv"><span class="table-label">Unidade:&nbsp;</span>5</div>
+                    <div class="col coluna-4-reserv"><span class="table-label">Cota N°:&nbsp;</span>1</div>
+                    <div class="col coluna-5-reserv"><span class="table-label">Expira Em:&nbsp;</span>20/11/2023</div>
+                    <div class="col coluna-6-reserv"><a onclick="informationFunction('cota 2')"><i class="material-symbols-outlined info"><strong>info</strong></i></a></div>
+                    <div class="col coluna-7-reserv"><a onclick="excluircotaFunction(this.parentNode.parentNode.id)"><i class="material-symbols-outlined trash"><strong>delete</strong></i></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<script>
+
+    function informationFunction() {
+        Swal.fire({
+            icon: "info",
+            showConfirmButton: false,
+            showCancelButton: true,
+            cancelButtonText: "Fechar",
+            cancelButtonColor: "#38be3b",
+            html: `<div class="container" style="padding: 0">
+                       <ul class="responsive-table" style="padding: 0">
+                           <li class="table-header">
+                              <div class="col coluna-1-popup-info">Imobiliária</div>
+                              <div class="col coluna-2-popup-info">CRECI</div>
+                           </li>
+                           <li class="table-row">
+                              <div class="col coluna-1-popup-info"><span class="table-label">Imobiliária:&nbsp;</span>Casanova</div>
+                              <div class="col coluna-2-popup-info"><span class="table-label">CRECI:&nbsp;</span>12345678 SC</div>
+                           </li>
+                           <li class="table-header">
+                              <div class="col coluna-1-popup-info">e-mail</div>
+                              <div class="col coluna-2-popup-info">Telefone</div>
+                           </li>
+                           <li class="table-row">
+                              <div class="col coluna-1-popup-info"><i class="material-symbols-outlined table-label">mail</i>casanova@casanova.com.br</div>
+                              <div class="col coluna-2-popup-info"><i class="material-symbols-outlined table-label">call</i>(47)9999-9999</div>
+                           </li>
+                       </ul>
+                   </div>`
+        })
+    }
+
+    function excluircotaFunction(cota) {
+        Swal.fire({
+            title: "Atenção!",
+            text: "Deseja realmente excluir a reserva da cota " + cota + "?",
+            icon: "warning",
+            showDenyButton: true,
+            confirmButtonText: "Excluir",
+            confirmButtonColor: "#38be3b",
+            denyButtonText: "Cancelar",
+            denyButtonColor: "#f44336"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Excluído!",
+                    text: "Sua cota " + cota + " foi excluída :(",
+                    icon: "success",
+                    confirmButtonText: "Fechar",
+                    confirmButtonColor: "#38be3b"
+                });
+            } else if (result.isDenied) {
+                Swal.fire({
+                    title: "Cancelado!",
+                    text: "Sua cota " + cota + " está a salvo :)",
+                    icon: "error",
+                    confirmButtonText: "Fechar",
+                    confirmButtonColor: "#38be3b"
+                });
+            }
+        })
+    }
+
+</script>

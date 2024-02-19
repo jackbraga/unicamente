@@ -1,0 +1,132 @@
+﻿@model Unicamente.UI.Web.Models.LoginViewModel
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	function loginformFunction() {
+		Swal.fire({
+			showConfirmlButton: false,
+			html: `<div class="avatar-container" style="height: 100px; text-align: center; color: #aaaaaa;">
+						<i id="cotista" class="fa fa-user-circle-o" style="display: none"></i>
+						<i id="investidor" class="material-symbols-outlined" style="font-size: 150px; display: block">account_circle</i>
+						<i id="corretor" class="material-symbols-outlined" style="font-size: 150px; display: none">badge</i>
+						<i id="imobiliaria" class="material-symbols-outlined" style="font-size: 150px; display: none">home_work</i>
+					</div>
+
+					<div class="form-container">
+					@* <label for="uname"><b>E-mail</b></label> *@
+						<div class="form-row">
+							<div class="form-col">
+								<span>Perfil de Acesso</span>
+							</div>
+						</div>
+						<br>
+						<div class="form-row" style="padding: 11px">
+							<div class="form-col" style="padding: 0px; background-color: #f1f1f1; border: solid 1px lightgray; border-radius: 4px; display: flex; justify-content: center; align-items: center;">
+								<!--<button type="button" class="perfil-btn" onmouseover="avatarFunction('cotista')">Cotista</button>-->
+								<button type="button" class="perfil-btn" onclick="avatarFunction('investidor')" id="btn-investidor">Investidor</button>
+								<button type="button" class="perfil-btn" onclick="avatarFunction('corretor')">Corretor</button>
+								<button type="button" class="perfil-btn" onclick="avatarFunction('imobiliaria')">Imobiliária</button>
+							</div>
+						</div>
+						<br>
+						<div class="form-row">
+							<div class="form-col">
+								<label asp-for="Email" class="control-label"></label>
+								<input id="email" asp-for="Email" type="text" placeholder="Informe seu E-mail" required class="form-control">
+								<span asp-validation-for="Email" class="text-danger"></span>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-col" style="position: relative;">
+								<label asp-for="Senha" class="control-label"></label>
+								<input style="padding-left: 45px" id="senha" asp-for="Senha" placeholder="Informe sua senha" required class="form-control">
+								<span asp-validation-for="Senha" class="text-danger"></span>
+		
+								<div style="position: absolute; left: 5px; top: 35px;" class="input-group-append">
+									<button style="width: 40px; height: 40px; padding: 5px;color: darkgray; background-color: transparent; border: none" id="show_password" class="btn btn-primary" type="button">
+										<span class="fa fa-eye-slash icon"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						@*
+						<label for="psw"><b>Senha</b></label>
+						<input type="password" placeholder="Informe sua senha" name="psw" required> *@
+
+						<button type="submit" class="ok-btn">Entrar</button>
+						<!--<input type="checkbox" checked="checked" name="remember"> Lembre-se de mim-->
+
+						<div style="padding: 0px">
+							<div class="form-row" style="background-color:#fff">
+								<div class="form-col">
+									<button type="button" onclick="document.getElementById('login').style.display='none'" class="cancel-btn">Cancelar</button>
+									<span><a href="#" class="psw">Esqueceu a senha?</a></span>
+								</div>
+							</div>
+						</div>
+					</div>`,
+		});
+	}
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		avatarFunction('investidor');
+		$('#show_password').hover(function show() {
+			//Change the attribute to text
+			$('#senha').attr('type', 'text');
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		},
+			function () {
+				//Change the attribute back to password
+				$('#senha').attr('type', 'password');
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+			});
+	});
+	// ======= Get Modal =======
+	var modal = document.getElementById('login');
+
+	// ======= Close Modal When The User Clicks Anywhere Outside =======
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+
+	function onSucess(response) {
+		if (response.success) {
+			exibirPopupSucessoComRedirect(response.message, "/Investidor/Index");
+		}
+		else {
+			exibirPopupErro(response.message);
+		}
+	}
+
+	function avatarFunction(parm) {
+		var cotista = document.getElementById("cotista");
+		var investidor = document.getElementById("investidor");
+		var corretor = document.getElementById("corretor");
+		var imobiliaria = document.getElementById("imobiliaria");
+
+		cotista.style.display = "none";
+		investidor.style.display = "none";
+		corretor.style.display = "none";
+		imobiliaria.style.display = "none";
+
+		if (parm == "cotista") {
+			cotista.style.display = "block";
+		}
+		else if (parm == "investidor") {
+			investidor.style.display = "block";
+		}
+		else if (parm == "corretor") {
+			corretor.style.display = "block";
+		}
+		else if (parm == "imobiliaria") {
+			imobiliaria.style.display = "block";
+		}
+	}
+
+</script>  

@@ -1,0 +1,532 @@
+﻿@model Unicamente.UI.Web.Models.InvestidorViewModel
+
+@{
+    ViewData["Title"] = "Área do Investidor";
+    Layout = "";
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sidebar 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    @* <link rel="stylesheet" href="css/style.css"> *@
+    <link href="~/css/Sidebar/style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <h1>
+                <a href="index.html" class="logo">
+                    @* <img src="~/img/logo-oskem-fundo-preto.png" /> *@
+                    <img src="~/img/logo-oskem-fundo-preto.png" id="logo-grande" style="display:none" />
+                    @* <img src="~/img/apple-touch-icon.png" id="logo-pequeno" style="width:60%"/> *@
+                    <img src="~/img/logo_transparente.png" id="logo-pequeno" style="width:60%" />
+
+                </a>
+
+            </h1>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    @* <a href="#"><span class="fa fa-home"></span> Home</a> *@
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-home"></span>Cotas</a>
+
+
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" class="tablinks" onclick="abrirTab(event, 'DadosPessoais')"><span class="material-symbols-outlined material-icons-position">shopping_cart</span>Comprar</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks" onclick="abrirTab(event, 'DadosPessoais')"><span class="material-symbols-outlined material-icons-position">real_estate_agent</span>Reservadas</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks" onclick="abrirTab(event, 'DadosPessoais')"><span class="material-symbols-outlined material-icons-position">in_home_mode</span>Adquiridas</a>
+                        </li>
+                    </ul>
+
+
+
+                </li>
+                <li>
+                    @* <a href="#"><span class="fa fa-user"></span> Dados Pessoais</a> *@
+                    <a href="#minhaContaSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-user"></span>Minha Conta</a>
+                    <ul class="collapse list-unstyled" id="minhaContaSubmenu">
+
+                        <li>
+                            <a href="#" class="tablinks" onclick="abrirTab(event, 'DadosPessoais')"><span class="material-symbols-outlined material-icons-position">account_circle</span>Dados Pessoais</a>
+                        </li>
+
+                        <li><a href="#" class="tablinks" onclick="abrirTab(event, 'Endereco')"><span class="material-symbols-outlined material-icons-position">pin_drop</span>Endereço</a></li>
+                        <li><a href="#" class="tablinks" onclick="abrirTab(event, 'Seguranca')"><span class="material-symbols-outlined material-icons-position">lock</span>Segurança</a></li>
+
+
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-sticky-note"></span> Cotas</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-cogs"></span> Services</a>
+                </li>
+                <li>
+                    <a asp-action="Logout" class="nav-link"><span class="fa fa-sign-out"></span>Sair</a>
+                </li>
+            </ul>
+
+            @*             <div class="footer">
+            <p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+            </p>
+            </div> *@
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            @*                             <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                            </li> *@
+                            <li class="nav-item">
+                                @* <a class="nav-link" href="#">Sair</a> *@
+                                <a asp-action="Logout" class="nav-link">@Model.Nome</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div id="DadosPessoais" class="tabcontent" style="display:none">
+
+                <div class="section-title">
+                    <h2>Minha Conta</h2>
+                    @* <p>Você é um investidor ou um corretor? Complete seu cadastro abaixo</p> *@
+                </div>
+
+                <div class="col-lg-12">
+                    <form id="form-investidor-dados-pessoais" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Investidor/AtualizarDadosPessoais" data-ajax-success="onSucess" role="form" class="php-email-form">
+                        <input asp-for="ID" type="hidden" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label class="control-label">Nome Completo</label>
+                                    <input asp-for="Nome" class="form-control somenteTexto" id="nome" placeholder="João da Silva" required />
+                                    <span asp-validation-for="Nome" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-3">
+                                    <label asp-for="Celular" class="control-label"></label>
+                                    <input asp-for="Celular" type="text" class="form-control" id="celular" required />
+                                    <span asp-validation-for="Celular" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-3" style="margin-top:7px;">
+                                    <label asp-for="Complemento.Nascimento" class="control-label"></label>
+                                    <input asp-for="Complemento.Nascimento" type="date" class="form-control" id="nascimento" required />
+                                    <span asp-validation-for="Complemento.Nascimento" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label asp-for="Complemento.CPF" class="control-label"></label>
+                                    <input asp-for="Complemento.CPF" type="text" class="form-control" id="cpf" required />
+                                </div>
+                                <div class="col-md-3">
+                                    <label asp-for="Complemento.RG" class="control-label"></label>
+                                    <input asp-for="Complemento.RG" class="form-control" id="rg" required />
+                                    <span asp-validation-for="Complemento.RG" class="text-danger"></span>
+                                </div>
+
+                                @*             <div class="col">
+                                <label class="control-label">Orgao Expedidor</label>
+                                <input asp-for="Complemento.OrgaoExpedidor" class="form-control" id="orgaoexpedidor" required />
+                                <span asp-validation-for="Complemento.OrgaoExpedidor" class="text-danger"></span>
+                                </div> *@
+
+                                <div class="col-md-4">
+                                    <label class="control-label">Orgao Expedidor</label>
+
+                                    @* <input asp-for="Complemento.OrgaoExpedidor" class="form-control" id="orgaoexpedidor" required /> *@
+                                    <select asp-for="Complemento.OrgaoExpedidor" asp-items="@ViewBag.TipoDocumento" class="form-control" id="ufrg" required>
+                                        <option disabled selected>Selecione...</option>
+                                    </select>
+
+                                    <span asp-validation-for="Complemento.OrgaoExpedidor" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="control-label">UF</label>
+                                    @* <input asp-for="Complemento.UFRG" class="form-control" id="ufrg" required /> *@
+                                    <select asp-for="Complemento.UFRG" asp-items="@ViewBag.UF" class="form-control" id="ufrg" required>
+                                    </select>
+
+                                    <span asp-validation-for="Complemento.UFRG" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div style="text-align: right">
+                                <button id="cadastrar-investidor" class="btn-salvar" type="submit" style="background: #38be3b">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="Endereco" class="tabcontent" style="display:none">
+                <div class="section-title">
+                    <h2>Endereço</h2>
+                    @* <p>Você é um investidor ou um corretor? Complete seu cadastro abaixo</p> *@
+                </div>
+                <div class="col-lg-12">
+                    <form id="form-investidor-endereco" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Investidor/AtualizarEndereco" data-ajax-success="onSucess" role="form" class="php-email-form">
+                        <input asp-for="ID" type="hidden" />
+                        <div class="form-group">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label asp-for="Complemento.CEP" class="control-label"></label>
+                                    <input asp-for="Complemento.CEP" class="form-control" id="cep" required />
+                                    <span asp-validation-for="Complemento.CEP" class="text-danger"></span>
+                                </div>
+                                <div class="col-sm-7" style="padding-top: 3%;">
+                                    <img id="img-loader-endereco" src="~/img/loader-ajax.gif" style="display: none; height: 24px;" /><span class="text-danger" id="id-cep-invalido" style="display : none">CEP não encontrado, favor inserir endereço.</span>
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label asp-for="Complemento.Logradouro" class="control-label"></label>
+                                    <input asp-for="Complemento.Logradouro" class="form-control" id="logradouro" required readonly />
+                                    <span asp-validation-for="Complemento.Logradouro" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-2">
+                                    <label asp-for="Complemento.Numero" class="control-label"></label>
+                                    <input asp-for="Complemento.Numero" class="form-control" id="numero" required />
+                                    <span asp-validation-for="Complemento.Numero" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Complemento.Complemento" class="control-label"></label>
+                                    <input asp-for="Complemento.Complemento" class="form-control" id="complemento" />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <label asp-for="Complemento.Bairro" class="control-label"></label>
+                                    <input asp-for="Complemento.Bairro" class="form-control" id="bairro" required readonly />
+                                    <span asp-validation-for="Complemento.Bairro" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                    <label asp-for="Complemento.Cidade" class="control-label"></label>
+                                    <input asp-for="Complemento.Cidade" class="form-control" id="cidade" required readonly />
+                                    <span asp-validation-for="Complemento.Cidade" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                    <label asp-for="Complemento.Estado" class="control-label"></label>
+                                    <input asp-for="Complemento.Estado" class="form-control" id="uf" required readonly />
+                                    <span asp-validation-for="Complemento.Estado" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div style="text-align: right">
+                                <button type="submit" class="btn-salvar" style="background: #38be3b">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="Seguranca" class="tabcontent" style="display:none">
+                <div class="section-title">
+                    <h2>Segurança</h2>
+                    @* <p>Você é um investidor ou um corretor? Complete seu cadastro abaixo</p> *@
+                </div>
+                <div class="col-lg-12">
+                    <form asp-controller="Investidor" asp-action="Create" method="post" role="form" class="php-email-form">
+                        <input asp-for="ID" type="hidden" />
+                        <div class="form-group">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label">Senha antiga</label>
+                                    <input asp-for="Senha" class="form-control" id="senha" placeholder="*******" required />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label">Senha</label>
+                                    <input asp-for="Senha" class="form-control" id="senha" placeholder="*******" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label">Confirmar senha</label>
+                                    <input asp-for="Senha" class="form-control" id="senha" placeholder="*******" required />
+                                </div>
+                            </div>
+                            <br>
+                            <div style="text-align: right">
+                                <button type="submit" style="background: #38be3b" class="btn-salvar">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="~/js/Sidebar/main.js"></script>
+    <script src="~/js/Sidebar/popper.js"></script>
+    <script src="~/js/Sidebar/jquery.min.js"></script>
+    <script src="~/js/Sidebar/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/lib/jquery/dist/jquery.mask.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            // $("#celular").inputmask("(99)99999-9999");
+            $("#celular").mask("(00) 00000-0000");
+            $("#cpf").mask("000.000.000-00");
+            $("#rg").mask("0000000000");
+            $("#cep").mask("00000-000");
+            // $("#nascimento").mask("00/00/0000");
+
+            $("#nome").keypress(function (e) {
+                var key = e.keyCode;
+                if (key >= 48 && key <= 57) {
+                    e.preventDefault();
+                }
+            });
+
+            $("#cep").blur(function () {
+                $("#img-loader-endereco").show();
+                $("#logradouro").attr('readonly', true);
+                $("#cidade").attr('readonly', true);
+                $("#uf").attr('readonly', true);
+                // $("#pais").attr('readonly', true);
+                $("#bairro").attr('readonly', true);
+
+                $.get("/Investidor/ConsultaCEP?cep=" + $(this).val(), function (retorno) {
+
+                    debugger;
+                    if (retorno.success == false) {
+                        $("#id-cep-invalido").show();
+                        $("#logradouro").val("");
+                        $("#cidade").val("");
+                        $("#uf").val("");
+                        // $("#pais").val("");
+                        $("#bairro").val("");
+
+                        $("#img-loader-endereco").hide();
+                        $("#logradouro").attr('readonly', false);
+                        $("#cidade").attr('readonly', false);
+                        $("#uf").attr('readonly', false);
+                        // $("#pais").attr('readonly', false);
+                        $("#bairro").attr('readonly', false);
+                        // $("#txtComplemento").attr('readonly', false);
+                    } else {
+                        $("#id-cep-invalido").hide();
+                        $("#logradouro").val(retira_acentos(retorno.retorno.logradouro).toUpperCase());
+                        $("#bairro").val(retira_acentos(retorno.retorno.bairro).toUpperCase());
+                        $("#cidade").val(retira_acentos(retorno.retorno.cidade).toUpperCase());
+                        $("#uf").val(retira_acentos(retorno.retorno.uf).toUpperCase());
+
+                        $("#img-loader-endereco").hide();
+
+                        retorno.retorno.logradouro == "" ? $("#logradouro").attr('readonly', false) : $("#logradouro").attr('readonly', true);
+                        retorno.retorno.bairro == "" ? $("#bairro").attr('readonly', false) : $("#bairro").attr('readonly', true);
+                        retorno.retorno.cidade == "" ? $("#cidade").attr('readonly', false) : $("#cidade").attr('readonly', true);
+                        retorno.retorno.uf == "" ? $("#uf").attr('readonly', false) : $("#uf").attr('readonly', true);
+
+                        // $("#txtComplemento").attr('readonly', false);
+                        $("#numero").attr('readonly', false);
+
+
+
+                        $("#logradouro").focusout(function () {
+                            $("#logradouro").val(retira_acentos($("#logradouro").val()).toUpperCase());
+                        });
+                        $("#bairro").focusout(function () {
+                            $("#bairro").val(retira_acentos($("#bairro").val()).toUpperCase());
+                        });
+                        $("#cidade").focusout(function () {
+                            $("#cidade").val(retira_acentos($("#cidade").val()).toUpperCase());
+                        });
+
+                        $("#uf").focusout(function () {
+                            $("#uf").val(retira_acentos($("#uf").val()).toUpperCase());
+                        });
+
+                        retorno.retorno.logradouro == "" ? $("#logradouro").focus() : $("#numero").focus();
+                    }
+                });
+            });
+
+        });
+
+        function retira_acentos(palavra) {
+            com_acento = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ';
+            sem_acento = 'aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC';
+            nova = '';
+            for (i = 0; i < palavra.length; i++) {
+                if (palavra.substr(i, 1) != "(" && palavra.substr(i, 1) != ")" && com_acento.search(palavra.substr(i, 1)) >= 0 && palavra.substr(i, 1) != ".") {
+                    nova += sem_acento.substr(com_acento.search(palavra.substr(i, 1)), 1);
+                }
+                else {
+                    nova += palavra.substr(i, 1);
+                }
+            }
+            return nova;
+        }
+        function onSucess(response) {
+            if (response.success) {
+                exibirPopupSucesso(response.message);
+            }
+            else {
+                exibirPopupErro(response.message);
+            }
+        }
+
+        var fullHeight = function () {
+
+            $('.js-fullheight').css('height', $(window).height());
+            $(window).resize(function () {
+                $('.js-fullheight').css('height', $(window).height());
+            });
+
+        };
+        fullHeight();
+
+        $('#sidebarCollapse').on('click', function () {
+            if ($('#sidebar').hasClass('active')) {
+
+                // $(".icons-block").css('display', 'inline');
+
+                $("#logo-pequeno").css('display', 'none');
+                if ($(window).width() > 992) {
+
+                    $("#logo-grande").css('display', 'inline-block');
+                }
+            }
+            else {
+                // $(".icons-block").css('display', 'block');
+
+                $("#logo-pequeno").css('display', 'inline-block');
+
+                if ($(window).width() > 992) {
+
+                    $("#logo-grande").css('display', 'none');
+                }
+            }
+
+            $('#sidebar').toggleClass('active');
+
+        });
+
+        function abrirTab(evt, nomeTab) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(nomeTab).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function exibirPopupErro(mensagem) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+                // footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+
+        function exibirPopupSucesso(mensagem) {
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso!",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+                // footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+
+        function exibirPopupSucessoComRedirect(mensagem, url) {
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso!",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+            }).then(() => {
+                window.location.href = url;
+            });
+        }
+
+
+
+
+    </script>
+</body>
+</html>

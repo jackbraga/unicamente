@@ -1,0 +1,296 @@
+﻿@model Unicamente.UI.Web.Models.AdministrativoViewModel
+
+@{
+    ViewData["Title"] = "Área do Investidor";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<nav id="sidebar" class="active">
+    <h1>
+        <a href="index.html" class="logo">
+            @* <img src="~/img/logo-oskem-fundo-preto.png" /> *@
+            <img src="~/img/logo-oskem-fundo-preto.png" id="logo-grande" style="display:none" />
+            @* <img src="~/img/apple-touch-icon.png" id="logo-pequeno" style="width:60%"/> *@
+            <img src="~/img/logo_transparente.png" id="logo-pequeno" style="width:60%" />
+
+        </a>
+
+    </h1>
+    <ul class="list-unstyled components mb-5">
+        <li>
+            @* <a href="#"><span class="fa fa-home"></span> Home</a> *@
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-home"></span>Inicio</a>
+
+
+            <ul class="collapse show list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#" class="tablinks active" onclick="abrirTab(event, 'RealState')"><span class="material-symbols-outlined material-icons-position">home</span>Resumos</a>
+                </li>
+@*                 <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'novaImobiliaria')"><span class="material-symbols-outlined material-icons-position">real_estate_agent</span>Nova</a>
+                </li> *@
+@*                 <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'CotasAdquiridas')"><span class="material-symbols-outlined material-icons-position">in_home_mode</span>Adquiridas</a>
+                </li> *@
+            </ul>
+
+        </li>
+        <li>
+            <a href="#minhaContaSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-list-alt"></span>Cadastros</a>
+            <ul class="collapse list-unstyled" id="minhaContaSubmenu">
+                @* <i class="fa-solid fa-clipboard-list"></i> *@
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'recipientes')"><span class="material-symbols-outlined material-icons-position">pediatrics</span>Recipientes</a>
+                </li>
+
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'coco')"><span class="material-symbols-outlined material-icons-position">filter_vintage</span>Mariri</a>
+                </li>
+
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'coco')"><span class="material-symbols-outlined material-icons-position">eco</span>Chacrona</a>
+                </li>
+            </ul>
+
+        </li>
+@*         <li>
+            <a href="#"><span class="fa fa-sticky-note"></span> Cotas</a>
+        </li 
+         <li>
+            <a href="#"><span class="fa fa-cogs"></span> Services</a>
+        </li> *@
+        <li>
+            <a asp-action="Logout" class="nav-link"><span class="fa fa-sign-out"></span>Sair</a>
+        </li>
+    </ul>
+
+    @*             <div class="footer">
+    <p>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+    </p>
+    </div> *@
+</nav>
+
+<!-- Page Content  -->
+<div id="content" class="p-4 p-md-5">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn" style=" background:#049be3">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <h2 style="margin:auto;font-size: 28px;text-transform: uppercase;position: relative;color: gray;">Administrativo</h2>
+                <ul class="nav navbar-nav ml-auto">
+                    @*                             <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                    </li> *@
+                    <li class="nav-item">
+                        @* <a class="nav-link" href="#">Sair</a> *@
+                        <a asp-action="Logout" class="nav-link">"Administrator Jackson"</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="novaImobiliaria" class="tabcontent" style="display:none">
+
+        <div class="section-title">
+            <h2>Adicionar Imobiliária</h2>
+            @* <p>Você é um investidor ou um corretor? Complete seu cadastro abaixo</p> *@
+        </div>
+
+        <div class="col-lg-12">
+          @*
+            <form id="form-adicionar-imobiliaria" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Investidor/AtualizarDadosPessoais" data-ajax-success="onSucess" role="form" class="php-email-form">
+                <input asp-for="ID" type="hidden" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label class="control-label">CNPJ</label>
+                            <input asp-for="Nome" class="form-control somenteTexto" id="nome" placeholder="João da Silva" required />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Celular" class="control-label"></label>
+                            <input asp-for="Celular" type="text" class="form-control" id="celular" required />
+                            <span asp-validation-for="Celular" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-3" style="margin-top:7px;">
+                            <label asp-for="Complemento.Nascimento" class="control-label"></label>
+                            <input asp-for="Complemento.Nascimento" type="date" class="form-control" id="nascimento" required />
+                            <span asp-validation-for="Complemento.Nascimento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="Complemento.CPF" class="control-label"></label>
+                            <input asp-for="Complemento.CPF" type="text" class="form-control" id="cpf" required />
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Complemento.RG" class="control-label"></label>
+                            <input asp-for="Complemento.RG" class="form-control" id="rg" required />
+                            <span asp-validation-for="Complemento.RG" class="text-danger"></span>
+                        </div>
+
+                        @*             <div class="col">
+                        <label class="control-label">Orgao Expedidor</label>
+                        <input asp-for="Complemento.OrgaoExpedidor" class="form-control" id="orgaoexpedidor" required />
+                        <span asp-validation-for="Complemento.OrgaoExpedidor" class="text-danger"></span>
+                        </div> 
+
+                        <div class="col-md-4">
+                            <label class="control-label">Orgao Expedidor</label>
+
+                            @* <input asp-for="Complemento.OrgaoExpedidor" class="form-control" id="orgaoexpedidor" required /> 
+                            <select asp-for="Complemento.OrgaoExpedidor" asp-items="@ViewBag.TipoDocumento" class="form-control" id="ufrg" required>
+                                <option disabled selected>Selecione...</option>
+                            </select>
+
+                            <span asp-validation-for="Complemento.OrgaoExpedidor" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="control-label">UF</label>
+                            @* <input asp-for="Complemento.UFRG" class="form-control" id="ufrg" required /> 
+                            <select asp-for="Complemento.UFRG" asp-items="@ViewBag.UF" class="form-control" id="ufrg" required>
+                            </select>
+
+                            <span asp-validation-for="Complemento.UFRG" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="text-align: right">
+                        <button id="cadastrar-investidor" class="btn-salvar" type="submit" style="background: #38be3b">Salvar</button>
+                    </div>
+                </div>
+            </form>
+    *@
+        </div>
+
+    </div>
+
+
+
+    <div id="RealState" class="tabcontent" active>
+        <partial name="_RealState.cshtml" model="@Model" />
+    </div>
+
+
+    <div id="recipientes" class="tabcontent" style="display:none">
+        <partial name="_Recipientes.cshtml" model="@Model" />
+    </div>
+
+
+    <div id="CotasReservadas" class="tabcontent" style="display:none">
+
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Minhas cotas Reservadas</h2>
+                </div>
+                <p>
+                    Aqui aonde vão as cotas reservadas
+                </p>
+
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1500,
+        once: true
+    });
+</script>
+
+
+<script>
+
+    /**
+     * Porfolio isotope and filter
+     */
+    window.addEventListener('load', () => {
+        let portfolioContainer = select('.portfolio-container');
+        if (portfolioContainer) {
+            let portfolioIsotope = new Isotope(portfolioContainer, {
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            let portfolioFilters = select('#portfolio-flters li', true);
+
+            on('click', '#portfolio-flters li', function (e) {
+                e.preventDefault();
+                portfolioFilters.forEach(function (el) {
+                    el.classList.remove('filter-active');
+                });
+                this.classList.add('filter-active');
+
+                portfolioIsotope.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+                portfolioIsotope.on('arrangeComplete', function () {
+                    AOS.refresh()
+                });
+            }, true);
+        }
+
+    });
+
+    /**
+     * Initiate portfolio lightbox
+     */
+    const portfolioLightbox = GLightbox({
+        selector: '.portfolio-lightbox'
+    });
+
+    /**
+     * Portfolio details slider
+     */
+    new Swiper('.portfolio-details-slider', {
+        speed: 400,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        }
+    });
+</script>

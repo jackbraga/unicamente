@@ -1,0 +1,265 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    @* <link rel="stylesheet" href="css/style.css"> *@
+    <link href="~/css/Sidebar/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    @* <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> *@
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+
+        @RenderBody()
+
+
+    </div>
+
+  @*   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 3000,
+            once: true
+        });
+    </script> *@
+
+
+    <script src="~/js/Sidebar/main.js"></script>
+    <script src="~/js/Sidebar/popper.js"></script>
+    <script src="~/js/Sidebar/jquery.min.js"></script>
+    <script src="~/js/Sidebar/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/lib/jquery/dist/jquery.mask.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @* <script src="~/vendor/aos/aos.js"></script> *@
+    <script>
+
+
+        // $(document).ready(function () {
+        //     // $("#celular").inputmask("(99)99999-9999");
+        //     $("#celular").mask("(00) 00000-0000");
+        //     $("#cpf").mask("000.000.000-00");
+        //     $("#rg").mask("0000000000");
+        //     $("#cep").mask("00000-000");
+        //     // $("#nascimento").mask("00/00/0000");
+
+        //     $("#nome").keypress(function (e) {
+        //         var key = e.keyCode;
+        //         if (key >= 48 && key <= 57) {
+        //             e.preventDefault();
+        //         }
+        //     });
+
+        //     $("#cep").blur(function () {
+        //         $("#img-loader-endereco").show();
+        //         $("#logradouro").attr('readonly', true);
+        //         $("#cidade").attr('readonly', true);
+        //         $("#uf").attr('readonly', true);
+        //         // $("#pais").attr('readonly', true);
+        //         $("#bairro").attr('readonly', true);
+
+        //         $.get("/Investidor/ConsultaCEP?cep=" + $(this).val(), function (retorno) {
+
+        //             debugger;
+        //             if (retorno.success == false) {
+        //                 $("#id-cep-invalido").show();
+        //                 $("#logradouro").val("");
+        //                 $("#cidade").val("");
+        //                 $("#uf").val("");
+        //                 // $("#pais").val("");
+        //                 $("#bairro").val("");
+
+        //                 $("#img-loader-endereco").hide();
+        //                 $("#logradouro").attr('readonly', false);
+        //                 $("#cidade").attr('readonly', false);
+        //                 $("#uf").attr('readonly', false);
+        //                 // $("#pais").attr('readonly', false);
+        //                 $("#bairro").attr('readonly', false);
+        //                 // $("#txtComplemento").attr('readonly', false);
+        //             } else {
+        //                 $("#id-cep-invalido").hide();
+        //                 $("#logradouro").val(retira_acentos(retorno.retorno.logradouro).toUpperCase());
+        //                 $("#bairro").val(retira_acentos(retorno.retorno.bairro).toUpperCase());
+        //                 $("#cidade").val(retira_acentos(retorno.retorno.cidade).toUpperCase());
+        //                 $("#uf").val(retira_acentos(retorno.retorno.uf).toUpperCase());
+
+        //                 $("#img-loader-endereco").hide();
+
+        //                 retorno.retorno.logradouro == "" ? $("#logradouro").attr('readonly', false) : $("#logradouro").attr('readonly', true);
+        //                 retorno.retorno.bairro == "" ? $("#bairro").attr('readonly', false) : $("#bairro").attr('readonly', true);
+        //                 retorno.retorno.cidade == "" ? $("#cidade").attr('readonly', false) : $("#cidade").attr('readonly', true);
+        //                 retorno.retorno.uf == "" ? $("#uf").attr('readonly', false) : $("#uf").attr('readonly', true);
+
+        //                 // $("#txtComplemento").attr('readonly', false);
+        //                 $("#numero").attr('readonly', false);
+
+
+
+        //                 $("#logradouro").focusout(function () {
+        //                     $("#logradouro").val(retira_acentos($("#logradouro").val()).toUpperCase());
+        //                 });
+        //                 $("#bairro").focusout(function () {
+        //                     $("#bairro").val(retira_acentos($("#bairro").val()).toUpperCase());
+        //                 });
+        //                 $("#cidade").focusout(function () {
+        //                     $("#cidade").val(retira_acentos($("#cidade").val()).toUpperCase());
+        //                 });
+
+        //                 $("#uf").focusout(function () {
+        //                     $("#uf").val(retira_acentos($("#uf").val()).toUpperCase());
+        //                 });
+
+        //                 retorno.retorno.logradouro == "" ? $("#logradouro").focus() : $("#numero").focus();
+        //             }
+        //         });
+        //     });
+
+        // });
+
+        function retira_acentos(palavra) {
+            com_acento = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ';
+            sem_acento = 'aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC';
+            nova = '';
+            for (i = 0; i < palavra.length; i++) {
+                if (palavra.substr(i, 1) != "(" && palavra.substr(i, 1) != ")" && com_acento.search(palavra.substr(i, 1)) >= 0 && palavra.substr(i, 1) != ".") {
+                    nova += sem_acento.substr(com_acento.search(palavra.substr(i, 1)), 1);
+                }
+                else {
+                    nova += palavra.substr(i, 1);
+                }
+            }
+            return nova;
+        }
+        function onSucess(response) {
+            if (response.success) {
+                exibirPopupSucesso(response.message);
+            }
+            else {
+                exibirPopupErro(response.message);
+            }
+        }
+
+        var fullHeight = function () {
+
+            $('.js-fullheight').css('height', $(window).height());
+            $(window).resize(function () {
+                $('.js-fullheight').css('height', $(window).height());
+            });
+
+        };
+        fullHeight();
+
+        $('#sidebarCollapse').on('click', function () {
+            if ($('#sidebar').hasClass('active')) {
+
+                // $(".icons-block").css('display', 'inline');
+
+                $("#logo-pequeno").css('display', 'none');
+                if ($(window).width() > 992) {
+
+                    $("#logo-grande").css('display', 'inline-block');
+                }
+            }
+            else {
+                // $(".icons-block").css('display', 'block');
+
+                $("#logo-pequeno").css('display', 'inline-block');
+
+                if ($(window).width() > 992) {
+
+                    $("#logo-grande").css('display', 'none');
+                }
+            }
+
+            $('#sidebar').toggleClass('active');
+
+        });
+
+        function abrirTab(evt, nomeTab) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(nomeTab).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function exibirPopupErro(mensagem) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+                // footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+
+        function exibirPopupSucesso(mensagem) {
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso!",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+                // footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+
+        function exibirPopupSucessoComRedirect(mensagem, url) {
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso!",
+                confirmButtonText: "Fechar",
+                confirmButtonColor: "#38be3b",
+                text: mensagem,
+            }).then(() => {
+                window.location.href = url;
+            });
+        }
+
+
+
+
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

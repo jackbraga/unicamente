@@ -1,0 +1,15 @@
+D:\Github\unicamente\src\Unicamente.Repository\bin\Debug\net7.0\Unicamente.Repository.deps.json
+D:\Github\unicamente\src\Unicamente.Repository\bin\Debug\net7.0\Unicamente.Repository.dll
+D:\Github\unicamente\src\Unicamente.Repository\bin\Debug\net7.0\Unicamente.Repository.pdb
+D:\Github\unicamente\src\Unicamente.Repository\bin\Debug\net7.0\Unicamente.Domain.dll
+D:\Github\unicamente\src\Unicamente.Repository\bin\Debug\net7.0\Unicamente.Domain.pdb
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.csproj.AssemblyReference.cache
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.AssemblyInfoInputs.cache
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.AssemblyInfo.cs
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.csproj.CoreCompileInputs.cache
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.csproj.CopyComplete
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.dll
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\refint\Unicamente.Repository.dll
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\Unicamente.Repository.pdb
+D:\Github\unicamente\src\Unicamente.Repository\obj\Debug\net7.0\ref\Unicamente.Repository.dll

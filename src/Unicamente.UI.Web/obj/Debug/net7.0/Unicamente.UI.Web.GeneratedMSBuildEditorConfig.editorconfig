@@ -1,0 +1,189 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Unicamente.UI.Web
+build_property.RootNamespace = Unicamente.UI.Web
+build_property.ProjectDir = D:\Github\unicamente\src\Unicamente.UI.Web\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\Github\unicamente\src\Unicamente.UI.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/Recipientes/_FormularioRecipiente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cUmVjaXBpZW50ZXNcX0Zvcm11bGFyaW9SZWNpcGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/Recipientes/_ListaRecipientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cUmVjaXBpZW50ZXNcX0xpc3RhUmVjaXBpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/Recipientes/_Recipientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cUmVjaXBpZW50ZXNcX1JlY2lwaWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/_FormularioImobiliaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cX0Zvcm11bGFyaW9JbW9iaWxpYXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/_ListaImobiliarias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cX0xpc3RhSW1vYmlsaWFyaWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Administrativo/_RealState.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpdm9cX1JlYWxTdGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Configuracoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhY29lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/Cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWRhc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/Imovel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbW92ZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Enterprises.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRW50ZXJwcmlzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Hero.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSGVyby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_MultipropertieSpe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTXVsdGlwcm9wZXJ0aWVTcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Partiners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGluZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Portfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUG9ydGZvbGlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_TabsMultipropertieSpe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVGFic011bHRpcHJvcGVydGllU3BlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Home/_Testimonials.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVGVzdGltb25pYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/Index_Sidebar - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxJbmRleF9TaWRlYmFyIC0gQ29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/Index_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxJbmRleF9TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/MinhaConta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxNaW5oYUNvbnRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_EnterpriseMap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfRW50ZXJwcmlzZU1hcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_MinhaConta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfTWluaGFDb250YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_Portfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfUG9ydGZvbGlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_Quotas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfUXVvdGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_Reservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfUmVzZXJ2YXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Investidor/_ResidenceDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZXN0aWRvclxfUmVzaWRlbmNlRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Login/BemVindo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQmVtVmluZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Login/ConfirmarEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29uZmlybWFyRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Shared/_LayoutSidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-azp3dpuse3
+
+[D:/Github/unicamente/src/Unicamente.UI.Web/Views/Shared/_LayoutB.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-mfwsamyi0c

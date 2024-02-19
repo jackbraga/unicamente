@@ -1,0 +1,12 @@
+D:\Github\unicamente\src\Unicamente.Domain\bin\Debug\net7.0\Unicamente.Domain.deps.json
+D:\Github\unicamente\src\Unicamente.Domain\bin\Debug\net7.0\Unicamente.Domain.dll
+D:\Github\unicamente\src\Unicamente.Domain\bin\Debug\net7.0\Unicamente.Domain.pdb
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.csproj.AssemblyReference.cache
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.AssemblyInfoInputs.cache
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.AssemblyInfo.cs
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.csproj.CoreCompileInputs.cache
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.dll
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\refint\Unicamente.Domain.dll
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\Unicamente.Domain.pdb
+D:\Github\unicamente\src\Unicamente.Domain\obj\Debug\net7.0\ref\Unicamente.Domain.dll

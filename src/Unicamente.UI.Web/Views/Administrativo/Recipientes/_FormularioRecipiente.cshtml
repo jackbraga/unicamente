@@ -1,0 +1,141 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Unicamente.UI.Web.Models.ImobiliariaViewModel
+
+<div class="container" style="padding: 0;">
+    <p style="text-align: left"><a onclick="tabelaRecipiente()" style="cursor: pointer"><strong><i class="material-symbols-outlined">undo</i> Lista de Recipientes</strong></a></p>
+    <div class="col-lg-12">
+
+        <form id="form-adicionar-imobiliaria" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Administrativo/SalvarImobiliaria" data-ajax-success="onAdicionarImobiliariaSuccess" role="form" class="php-email-form">
+            <input asp-for="ID" type="hidden" id="idImobiliaria" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <label class="control-label">CNPJ</label>
+                        <input asp-for="CNPJ" class="form-control somenteTexto" id="cnpj" required />
+                        <span asp-validation-for="CNPJ" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-7">
+                        <label class="control-label">Razao Social</label>
+                        <input asp-for="RazaoSocial" type="text" class="form-control" id="razasocial" required />
+                        <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="control-label">E-mail</label>
+                        @* <input type="text" class="form-control" name="Email" id="Email" required @Html.DisabledIf(Model.ID>0) /> *@
+                        @if (Model.ID > 0)
+                        {
+
+                            <input asp-for="Email" type="text" class="form-control" id="email" required disabled />
+                        }
+                        else
+                        {
+                            <input asp-for="Email" type="text" class="form-control" id="email" required />
+
+                        }
+
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Nome do Responsável</label>
+                        <input asp-for="NomeResponsavel" type="text" class="form-control" id="responsavel" required />
+                        <span asp-validation-for="NomeResponsavel" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Contato do Responsável</label>
+                        <input asp-for="Contato" class="form-control" id="contato" required />
+                        <span asp-validation-for="Contato" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <button id="cadastrar-investidor" class="btn-salvar" style="background:#049be3" type="submit">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function ($) {
+        aplicarMascaras();
+    });
+
+
+
+    function tabelaRecipiente() {
+        $("#tabela-recipiente").show();
+        $("#formulario-recipiente").hide();
+        limpaFormularioRecipiente();
+    }
+
+
+
+
+
+
+
+
+    function aplicarMascaras() {
+        $("#contato").mask("(00) 09999-9999");
+        $("#cnpj").mask("09.000.000/0000-00");
+        $("#rg").mask("0000000000");
+        $("#cep").mask("00000-000");
+
+        $("#responsavel").keypress(function (e) {
+            var key = e.keyCode;
+            if (key >= 48 && key <= 57) {
+                e.preventDefault();
+            }
+        });
+    }
+
+    function onAdicionarImobiliariaSuccess(response) {
+        if (response.success) {
+            Swal.fire({
+                icon: "success",
+                title: "Sucesso!",
+                text: response.message,
+                // footer: 'Bem vindo ao mundo dos investimentos imobiliários!',
+                confirmButtonText: "OK",
+                confirmButtonColor: "#38be3b",
+            }).then(() => {
+                atualizaListaImobiliarias();
+            });
+
+        }
+        else {
+            exibirPopupErro(response.message);
+        }
+    }
+
+
+    function limpaFormularioRecipiente() {
+        $("#idImobiliaria").val(0);
+        $("#cnpj").val('');
+        $("#razasocial").val('');
+        $("#email").val('');
+        $("#responsavel").val('');
+        $("#contato").val('');
+        $("#email").removeAttr('disabled');
+    }
+
+
+
+
+</script>
+

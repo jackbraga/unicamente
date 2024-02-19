@@ -1,0 +1,286 @@
+﻿@model Unicamente.UI.Web.Models.InvestidorViewModel
+
+@{
+    ViewData["Title"] = "Área do Investidor";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<nav id="sidebar" class="active">
+    <h1>
+        <a href="index.html" class="logo">
+            @* <img src="~/img/logo-oskem-fundo-preto.png" /> *@
+            <img src="~/img/logo-oskem-fundo-preto.png" id="logo-grande" style="display:none" />
+            @* <img src="~/img/apple-touch-icon.png" id="logo-pequeno" style="width:60%"/> *@
+            <img src="~/img/logo_transparente.png" id="logo-pequeno" style="width:60%" />
+
+        </a>
+
+    </h1>
+    <ul class="list-unstyled components mb-5">
+        <li>
+            @* <a href="#"><span class="fa fa-home"></span> Home</a> *@
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-home"></span>Cotas</a>
+
+
+            <ul class="collapse show list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#" class="tablinks active" onclick="abrirTab(event, 'Empreendimentos')"><span class="material-symbols-outlined material-icons-position">shopping_cart</span>Comprar</a>
+                </li>
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'CotasReservadas')"><span class="material-symbols-outlined material-icons-position">real_estate_agent</span>Reservadas</a>
+                </li>
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'CotasAdquiridas')"><span class="material-symbols-outlined material-icons-position">in_home_mode</span>Adquiridas</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            @* <a href="#"><span class="fa fa-user"></span> Dados Pessoais</a> *@
+            <a href="#minhaContaSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-user"></span>Minha Conta</a>
+            <ul class="collapse list-unstyled" id="minhaContaSubmenu">
+
+                <li>
+                    <a href="#" class="tablinks" onclick="abrirTab(event, 'DadosPessoais')"><span class="material-symbols-outlined material-icons-position">account_circle</span>Dados Pessoais</a>
+                </li>
+
+                <li><a href="#" class="tablinks" onclick="abrirTab(event, 'Endereco')"><span class="material-symbols-outlined material-icons-position">pin_drop</span>Endereço</a></li>
+                <li><a href="#" class="tablinks" onclick="abrirTab(event, 'Seguranca')"><span class="material-symbols-outlined material-icons-position">lock</span>Segurança</a></li>
+
+
+            </ul>
+
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-sticky-note"></span> Cotas</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-cogs"></span> Services</a>
+        </li>
+        <li>
+            <a asp-action="Logout" class="nav-link"><span class="fa fa-sign-out"></span>Sair</a>
+        </li>
+    </ul>
+
+    @*             <div class="footer">
+    <p>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+    </p>
+    </div> *@
+</nav>
+
+
+<!-- Page Content  -->
+<div id="content" class="p-4 p-md-5">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    @*                             <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                    </li> *@
+                    <li class="nav-item">
+                        @* <a class="nav-link" href="#">Sair</a> *@
+                        <a asp-action="Logout" class="nav-link">@Model.Nome</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="Empreendimentos" class="tabcontent" active>
+        <partial name="_Portfolio.cshtml" />
+    </div>
+
+    <div id="Topografia" class="tabcontent" style="display:none">
+        <partial name="_EnterpriseMap.cshtml" />
+    </div>
+
+    <partial name="_ResidenceDetail.cshtml" />
+
+    <div id="CotasReservadas" class="tabcontent" style="display:none">
+        <partial name="_Reservations.cshtml" />
+    </div>
+
+    <div id="CotasAdquiridas" class="tabcontent" style="display:none">
+        <partial name="_Quotas.cshtml" />
+    </div>
+
+    <partial name="_MinhaConta.cshtml" />
+
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1500,
+        once: true
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // $("#celular").inputmask("(99)99999-9999");
+        $("#celular").mask("(00) 00000-0000");
+        $("#cpf").mask("000.000.000-00");
+        $("#rg").mask("0000000000");
+        $("#cep").mask("00000-000");
+        // $("#nascimento").mask("00/00/0000");
+
+        $("#nome").keypress(function (e) {
+            var key = e.keyCode;
+            if (key >= 48 && key <= 57) {
+                e.preventDefault();
+            }
+        });
+
+        $("#cep").blur(function () {
+            $("#img-loader-endereco").show();
+            $("#logradouro").attr('readonly', true);
+            $("#cidade").attr('readonly', true);
+            $("#uf").attr('readonly', true);
+            // $("#pais").attr('readonly', true);
+            $("#bairro").attr('readonly', true);
+
+            $.get("/Investidor/ConsultaCEP?cep=" + $(this).val(), function (retorno) {
+
+                // debugger;
+                if (retorno.success == false) {
+                    $("#id-cep-invalido").show();
+                    $("#logradouro").val("");
+                    $("#cidade").val("");
+                    $("#uf").val("");
+                    // $("#pais").val("");
+                    $("#bairro").val("");
+
+                    $("#img-loader-endereco").hide();
+                    $("#logradouro").attr('readonly', false);
+                    $("#cidade").attr('readonly', false);
+                    $("#uf").attr('readonly', false);
+                    // $("#pais").attr('readonly', false);
+                    $("#bairro").attr('readonly', false);
+                    // $("#txtComplemento").attr('readonly', false);
+                } else {
+                    $("#id-cep-invalido").hide();
+                    $("#logradouro").val(retira_acentos(retorno.retorno.logradouro).toUpperCase());
+                    $("#bairro").val(retira_acentos(retorno.retorno.bairro).toUpperCase());
+                    $("#cidade").val(retira_acentos(retorno.retorno.cidade).toUpperCase());
+                    $("#uf").val(retira_acentos(retorno.retorno.uf).toUpperCase());
+
+                    $("#img-loader-endereco").hide();
+
+                    retorno.retorno.logradouro == "" ? $("#logradouro").attr('readonly', false) : $("#logradouro").attr('readonly', true);
+                    retorno.retorno.bairro == "" ? $("#bairro").attr('readonly', false) : $("#bairro").attr('readonly', true);
+                    retorno.retorno.cidade == "" ? $("#cidade").attr('readonly', false) : $("#cidade").attr('readonly', true);
+                    retorno.retorno.uf == "" ? $("#uf").attr('readonly', false) : $("#uf").attr('readonly', true);
+
+                    // $("#txtComplemento").attr('readonly', false);
+                    $("#numero").attr('readonly', false);
+
+
+
+                    $("#logradouro").focusout(function () {
+                        $("#logradouro").val(retira_acentos($("#logradouro").val()).toUpperCase());
+                    });
+                    $("#bairro").focusout(function () {
+                        $("#bairro").val(retira_acentos($("#bairro").val()).toUpperCase());
+                    });
+                    $("#cidade").focusout(function () {
+                        $("#cidade").val(retira_acentos($("#cidade").val()).toUpperCase());
+                    });
+
+                    $("#uf").focusout(function () {
+                        $("#uf").val(retira_acentos($("#uf").val()).toUpperCase());
+                    });
+
+                    retorno.retorno.logradouro == "" ? $("#logradouro").focus() : $("#numero").focus();
+                }
+            });
+        });
+
+    });
+
+    /**
+     * Porfolio isotope and filter
+     */
+    window.addEventListener('load', () => {
+        let portfolioContainer = select('.portfolio-container');
+        if (portfolioContainer) {
+            let portfolioIsotope = new Isotope(portfolioContainer, {
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            let portfolioFilters = select('#portfolio-flters li', true);
+
+            on('click', '#portfolio-flters li', function (e) {
+                e.preventDefault();
+                portfolioFilters.forEach(function (el) {
+                    el.classList.remove('filter-active');
+                });
+                this.classList.add('filter-active');
+
+                portfolioIsotope.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+                portfolioIsotope.on('arrangeComplete', function () {
+                    AOS.refresh()
+                });
+            }, true);
+        }
+
+    });
+
+    /**
+     * Initiate portfolio lightbox
+     */
+    const portfolioLightbox = GLightbox({
+        selector: '.portfolio-lightbox'
+    });
+
+    /**
+     * Portfolio details slider
+     */
+    new Swiper('.portfolio-details-slider', {
+        speed: 400,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        }
+    });
+
+    function displaycontrolFunction(parm) {
+        var x = document.getElementById(parm);
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+</script>

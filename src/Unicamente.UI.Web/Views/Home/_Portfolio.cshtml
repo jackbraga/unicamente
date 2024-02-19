@@ -1,0 +1,156 @@
+﻿<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Empreendimentos</h2>
+            <p>Os empreendimentos Oskem são planejados para oferecer uma oportunidade segura de investimento, com alta rentabilidade, com o conforto de férias de alto padrão e serviços de Resort. Selecione o empreendimento desejado e solicite maiores informações.</p>
+        </div>
+
+        <!-- #### Descomentar esse filtro quando tiver um empreendimento na praia #### -->
+        <!--
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">Todos</li>
+                    <li data-filter=".filter-countryside">Campo</li>
+                    <li data-filter=".filter-beach">Praia</li>
+                </ul>
+            </div>
+        </div>
+        -->
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div id="alcantara" class="col-lg-4 col-md-4 portfolio-item filter-countryside">
+                <div class="portfolio-wrap">
+                    <img src="~/img/portfolio/Villaggio Alcantara.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Villagio Alcantara</h4>
+                        <p>Rancho Queimado - SC</p>
+                        <p>Campo</p>
+                        <div class="portfolio-links">
+                            <!--<a onclick="requestcontactEmpreendimentoFunction('alcantara')" style="cursor:pointer"><i class="material-symbols-outlined" style="font-size: 36px;"><b>add</b></i></a>-->
+                            <a onclick="requestcontactEmpreendimentoFunction('alcantara')" style="cursor:pointer; font-size: 16px"><b>Saiba Mais</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trentino" class="col-lg-4 col-md-4 portfolio-item filter-countryside">
+                <div class="portfolio-wrap">
+                    <img src="~/img/portfolio/Villaggio_Trentino.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Villagio Trentino</h4>
+                        <p>Rio dos Cedros - SC</p>
+                        <p>Campo</p>
+                        <div class="portfolio-links">
+                            <!--<a onclick="requestcontactEmpreendimentoFunction('trentino')" style="cursor:pointer"><i class="material-symbols-outlined" style="font-size: 36px;"><b>add</b></i></a>-->
+                            <a onclick="requestcontactEmpreendimentoFunction('trentino')" style="cursor:pointer; font-size: 16px"><b>Saiba Mais</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hermann" class="col-lg-4 col-md-4 portfolio-item filter-countryside">
+                <div class="portfolio-wrap">
+                    <img src="~/img/portfolio/Dorf_Hermann.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Dorf Hermann</h4>
+                        <p>Pomerode - SC</p>
+                        <p>Campo</p>
+                        <div class="portfolio-links">
+                            <!--<a onclick="requestcontactEmpreendimentoFunction('hermann')" style="cursor:pointer"><i class="material-symbols-outlined" style="font-size: 36px;"><b>add</b></i></a>-->
+                            <a onclick="requestcontactEmpreendimentoFunction('hermann')" style="cursor:pointer; font-size: 16px"><b>Saiba Mais</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    function requestcontactEmpreendimentoFunction(param) {
+
+        var html = `<div class="form-container">
+                        <div class="form-row">
+                            <p style="font-size: 20px">Preencha as informações abaixo, que um especialista irá lhe atender.</p>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-col" style="text-align: left">
+                                <label for="interest">Empreendimento</label>
+                                <select id="interest" class="form-control" required>
+                                    <option value="alcantara" ${(param === "alcantara" ? " selected " : "")}>Villaggio Alcântara</option>
+                                    <option value="trentino" ${(param === "trentino" ? " selected " : "")}>Villaggio Trentino</option>
+                                    <option value="hermann" ${(param === "hermann" ? " selected " : "")}>Dorf Hermann</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-col" style="text-align: left">
+                                <label for="name">Nome</label>
+                                <input id="nomeModal" class="form-control" required  maxlength="50">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-col" style="text-align: left">
+                                <label for="phone">Telefone</label>
+                                <input id="telefoneModal" class="form-control" required maxlength="11">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-col" style="text-align: left">
+                                <label for="email">e-mail</label>
+                                <input type="email" id="emailModal" class="form-control" required  maxlength="50">
+                            </div>
+                        </div>
+                    </div>`
+        Swal.fire({
+            title: "Solicite Atendimento",
+            showCancelButton: true,
+            confirmButtonText: "Solicitar",
+            confirmButtonColor: "#049be3",
+            cancelButtonText: "Fechar",
+            cancelButtonColor: "#f44336",
+            html: html,
+            focusConfirm: false,
+            preConfirm: () => {
+
+                if (!$("#interest").val() || !$("#nomeModal").val() || !$("#telefoneModal").val() || !$("#emailModal").val()) {
+                    Swal.showValidationMessage('Necessário preencher todos os campos');
+                    return;
+                }
+
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                $.post("/Home/EmailContato", {
+                    Nome: $("#nomeModal").val(),
+                    Telefone: $("#telefoneModal").val(),
+                    Email: $("#emailModal").val(),
+                    Assunto: 'Saber mais sobre o Empreendimento ',
+                        Mensagem:  $("#interest option:selected").text(),
+                });
+
+                Swal.fire({
+                    title: "Solicitação enviada com sucesso!",
+                    text: "Aguarde que em breve um especialista entrará em contato.",
+                    icon: "success",
+                    confirmButtonText: "Fechar",
+                    confirmButtonColor: "#38be3b"
+                });
+            }
+        });
+        if (formValues) {
+            Swal.fire(JSON.stringify(formValues));
+        }
+    }
+
+
+</script>
