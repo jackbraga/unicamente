@@ -2755,3 +2755,19 @@ a.psw {
             color: #38be3d;
             cursor: pointer;
         }
+
+
+.btn-acao-vermelho {
+    color: #D8200A;
+}
+
+    .btn-acao-vermelho:hover {
+        color: #A02415;
+    }
+.btn-acao-azul {
+    color: #099FF5;
+}
+
+    .btn-acao-azul:hover {
+        color: #1F6F9D;
+    }

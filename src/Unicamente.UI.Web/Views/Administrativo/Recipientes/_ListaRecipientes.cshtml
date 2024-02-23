@@ -1,28 +1,35 @@
-﻿@model IEnumerable<Unicamente.UI.Web.Models.ImobiliariaViewModel>
+﻿@model IEnumerable<Unicamente.UI.Web.Models.RecipienteViewModel>
 
 <div class="container" style="padding: 0;">
     <p style="text-align: left"><a onclick="formularioRecipiente()" style="cursor: pointer"><strong><i class="material-symbols-outlined">add</i> Incluir Recipiente</strong></a></p>
     <ul class="responsive-table" style="padding: 0">
         <li class="table-header">
-            <div class="col coluna-1-imob">Nome Fantasia</div>
-            <div class="col coluna-2-imob">CNPJ</div>
-            <div class="col coluna-3-imob">Responsável</div>
-            <div class="col coluna-4-imob">E-mail</div>
-            <div class="col coluna-5-imob">Detalhes</div>
+            <div class="col-md-1" style="flex-basis: 7%;"></div>
+            <div class="col" style="flex-basis: 14%;">Descricao</div>
+            <div class="col" style="flex-basis: 0%;">Volume (Litros)</div>
+            <div class="col" style="flex-basis: 0%;">Qtd Reuso</div>
+            <div class="col" style="flex-basis: 0%;">Observacao</div>
+            <div class="col" style="flex-basis: 0%;">Detalhes</div>
             @* <div class="col coluna-6-imob"><i class="material-symbols-outlined"><strong>badge</strong></i></div> *@
         </li>
-        @foreach (var imob in Model)
+        @foreach (var recipiente in Model)
         {
             <li class="table-row">
 
-                <div class="col coluna-1-imob" style="text-align: left;"><span class="table-label">Imobiliária:&nbsp;</span>@imob.RazaoSocial</div>
-                <div class="col coluna-2-imob" style="text-align: left;"><span class="table-label">CNPJ:&nbsp;</span>@imob.CNPJ</div>
-                <div class="col coluna-3-imob" style="text-align: left;"><span class="table-label">Responsável:&nbsp;</span>@imob.NomeResponsavel</div>
-                <div class="col coluna-4-imob" style="text-align: left;"><span class="table-label">e-mail:&nbsp;</span>@imob.Email</div>
-                <div class="col coluna-5-imob"><a onclick="detalheImobiliaria(@imob.ID)"><i class="material-symbols-outlined info"><strong>manage_search</strong></i></a></div>
+                <div class="col-md-1" style="display: flex;justify-content: center;margin: auto; flex-basis: 0%;text-align: left;">
+                    <img src="@recipiente.Imagem64()" id="imagemRecipiente" alt="recipiente" style="width:50px; height:50px; border-radius:50%;" />
+                </div>
+                <div class="col" style="display:block; word-break:break-word; margin: auto; flex-basis: 15%;text-align: left;"><span class="table-label" style="font-weight:bold">Descricao:&nbsp;</span>@recipiente.Descricao</div>
+                <div class="col" style="margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label">Volume:&nbsp;</span>@recipiente.Volume</div>
+                <div class="col" style="margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label">Qtd Reuso:&nbsp;</span>@recipiente.QuantidadeReuso</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Observação:&nbsp;</span>@recipiente.Observacao</div>
+                <div class="col" style="justify-content: center; margin: auto; flex-basis: 0%">
+                    <a onclick="detalheRecipiente(@recipiente.ID)"><i class="material-symbols-outlined btn-acao-azul"><strong>edit</strong></i></a>
+                    <a onclick="showModalremoverRecipiente(@recipiente.ID)"><i class="material-symbols-outlined btn-acao-vermelho"><strong>delete</strong></i></a>
+
+                </div>
                 @* <div class="col coluna-6-imob"><a onclick="brokerFunction()"><i class="material-symbols-outlined broker"><strong>badge</strong></i></a></div> *@
             </li>
-
         }
 
     </ul>
@@ -30,11 +37,60 @@
 </div>
 
 <script>
-    function formularioRecipiente() {
-        $("#tabela-recipiente").hide();
-        $("#formulario-recipiente").show();
-
+    function detalheRecipiente(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/Administrativo/DetalheRecipiente',
+            dataType: 'html',
+            data: { id: id },
+            success: function (result) {
+                $("#formulario-recipiente").html(result);
+                formularioRecipiente();
+               
+            }
+        });
     }
+
+
+
+    function showModalremoverRecipiente(id) {
+        Swal.fire({
+            title: "Tem certeza?",
+            text: "Deseja realmente deletar esse item?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, pode deletar!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                removerRecipiente(id);
+            }
+        });
+    }
+
+    function removerRecipiente(id) {
+        $.ajax({
+            type: 'POST',
+            url: '/Administrativo/DeletarRecipiente',
+            data: { id: id },
+            success: function (result) {
+                if (result.sucesso) {
+                    exibirPopupSucesso(result.mensagem);
+                    atualizaListaRecipientes();
+
+
+                }
+                else {
+                    exibirPopupErro(result.mensagem);
+                }
+
+            }
+        });
+    }
+
+
 </script>
 
 

@@ -8,13 +8,11 @@ namespace Unicamente.UI.Web.Mappings
     {
         public ViewModelToDTOMappingProfile()
         {
-            CreateMap<ImovelDTO,ImovelViewModel>().ReverseMap();
-            CreateMap<InvestidorDTO, TelaCadastroViewModel>().ReverseMap();
-            CreateMap<InvestidorDTO, InvestidorViewModel>().ReverseMap();
-            CreateMap<TipoPessoaDTO, TipoPessoaViewModel>().ReverseMap();
-            CreateMap<LoginDTO, LoginViewModel>().ReverseMap();
-            CreateMap<ComplementoInvestidorDTO, ComplementoInvestidorViewModel>().ReverseMap();
             CreateMap<ImobiliariaDTO, ImobiliariaViewModel>().ReverseMap();
+            CreateMap<RecipienteDTO, RecipienteViewModel>().ReverseMap();
+            CreateMap<MaririDTO, MaririViewModel>().ReverseMap();
+            CreateMap<ChacronaDTO, ChacronaViewModel>().ReverseMap();
+            CreateMap<VegetalDTO, VegetalViewModel>().ReverseMap();
         }
     }
 }

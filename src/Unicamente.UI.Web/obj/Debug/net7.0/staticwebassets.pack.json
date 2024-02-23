@@ -33,44 +33,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\Design sem nome (5).png",
-      "PackagePath": "staticwebassets\\img\\Design sem nome (5).png"
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\100anosMG.PNG",
+      "PackagePath": "staticwebassets\\img\\100anosMG.PNG"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\Home_Investidor.png",
-      "PackagePath": "staticwebassets\\img\\Home_Investidor.png"
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\LogoUdv-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\LogoUdv-removebg-preview.png"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\LogoOskem01.png",
-      "PackagePath": "staticwebassets\\img\\LogoOskem01.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\Propriedade_1.png",
-      "PackagePath": "staticwebassets\\img\\Propriedade_1.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\Propriedade_2.png",
-      "PackagePath": "staticwebassets\\img\\Propriedade_2.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\adquira.png",
-      "PackagePath": "staticwebassets\\img\\adquira.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\apple-touch-icon.png",
-      "PackagePath": "staticwebassets\\img\\apple-touch-icon.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\apple-touch-icon_old.png",
-      "PackagePath": "staticwebassets\\img\\apple-touch-icon_old.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\avatar.png",
-      "PackagePath": "staticwebassets\\img\\avatar.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\avatar2.png",
-      "PackagePath": "staticwebassets\\img\\avatar2.png"
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\LogoUdv.PNG",
+      "PackagePath": "staticwebassets\\img\\LogoUdv.PNG"
     },
     {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\blog\\blog-1.jpg",
@@ -141,22 +113,6 @@
       "PackagePath": "staticwebassets\\img\\blog\\comments-6.jpg"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\chale_01.jpeg",
-      "PackagePath": "staticwebassets\\img\\chale_01.jpeg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\chale_02.jpeg",
-      "PackagePath": "staticwebassets\\img\\chale_02.jpeg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\chale_03.jpeg",
-      "PackagePath": "staticwebassets\\img\\chale_03.jpeg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\chale_04.jpeg",
-      "PackagePath": "staticwebassets\\img\\chale_04.jpeg"
-    },
-    {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\clients\\client-1.png",
       "PackagePath": "staticwebassets\\img\\clients\\client-1.png"
     },
@@ -201,10 +157,6 @@
       "PackagePath": "staticwebassets\\img\\favicon_old.png"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\hero-bg.jpg",
-      "PackagePath": "staticwebassets\\img\\hero-bg.jpg"
-    },
-    {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\hero\\Carrossel_1.jpg",
       "PackagePath": "staticwebassets\\img\\hero\\Carrossel_1.jpg"
     },
@@ -245,44 +197,12 @@
       "PackagePath": "staticwebassets\\img\\loading_branco.gif"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo-oskem-fundo-branco.png",
-      "PackagePath": "staticwebassets\\img\\logo-oskem-fundo-branco.png"
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo_2.png",
+      "PackagePath": "staticwebassets\\img\\logo_2.png"
     },
     {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo-oskem-fundo-branco_old.png",
-      "PackagePath": "staticwebassets\\img\\logo-oskem-fundo-branco_old.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo-oskem-fundo-preto.png",
-      "PackagePath": "staticwebassets\\img\\logo-oskem-fundo-preto.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo-oskem-fundo-preto_old.png",
-      "PackagePath": "staticwebassets\\img\\logo-oskem-fundo-preto_old.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo_transparente.png",
-      "PackagePath": "staticwebassets\\img\\logo_transparente.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logo_transparente_old.png",
-      "PackagePath": "staticwebassets\\img\\logo_transparente_old.png"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\paisagem1.jpg",
-      "PackagePath": "staticwebassets\\img\\paisagem1.jpg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\paisagem2.jpg",
-      "PackagePath": "staticwebassets\\img\\paisagem2.jpg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\paisagem3.jpg",
-      "PackagePath": "staticwebassets\\img\\paisagem3.jpg"
-    },
-    {
-      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\paisagem4.jpg",
-      "PackagePath": "staticwebassets\\img\\paisagem4.jpg"
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\logopequdv.png",
+      "PackagePath": "staticwebassets\\img\\logopequdv.png"
     },
     {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\img\\partiners\\partiner-1.png",
@@ -409,12 +329,24 @@
       "PackagePath": "staticwebassets\\js\\Sidebar\\popper.js"
     },
     {
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\js\\jquery.inputmask.js",
+      "PackagePath": "staticwebassets\\js\\jquery.inputmask.js"
+    },
+    {
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\js\\sweetalert.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert.js"
     },
     {
       "Id": "D:\\Github\\unicamente\\src\\Unicamente.UI.Web\\wwwroot\\lib\\bootstrap\\LICENSE",

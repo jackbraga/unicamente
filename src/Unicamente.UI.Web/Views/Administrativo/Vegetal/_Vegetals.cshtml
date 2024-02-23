@@ -1,0 +1,60 @@
+﻿@model Unicamente.UI.Web.Models.AdministrativoViewModel
+
+<section class="realstate" style="padding: 0">
+    <div class="container">
+
+        <div class="section-title" style="padding: 5px">
+            <h2>Cadastro de Vegetal</h2>
+
+        </div>
+
+        <div id="tabela-vegetal">
+
+            <partial name="_ListaVegetals.cshtml" model="@Model.Vegetals" />
+        </div>
+
+        <div id="formulario-vegetal" style="display:none">
+            <partial name="_FormularioVegetal.cshtml" model="@Model.Vegetal" />
+        </div>
+
+    </div>
+
+
+</section>
+@* <script src="~/js/jquery.min.js"></script>
+<script src="~/js/jquery.inputmask.js"></script> *@
+@* 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script> *@
+<script>
+
+
+
+    function atualizaListaVegetals() {
+        $.ajax({
+            type: 'GET',
+            url: '/Administrativo/ListaVegetals',
+            // dataType: 'html',
+            success: function (data) {
+                $("#tabela-vegetal").html('');
+                $("#tabela-vegetal").html(data);
+                tabelaVegetal();
+
+            }
+        });
+    }
+
+    function tabelaVegetal() {
+        $("#tabela-vegetal").show();
+        $("#formulario-vegetal").hide();
+        limpaFormularioVegetal();
+    }
+
+    function formularioVegetal() {
+        $("#tabela-vegetal").hide();
+        $("#formulario-vegetal").show();
+
+    }
+
+
+</script>

@@ -1,57 +1,61 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model Unicamente.UI.Web.Models.ImobiliariaViewModel
+@model Unicamente.UI.Web.Models.RecipienteViewModel
 
 <div class="container" style="padding: 0;">
     <p style="text-align: left"><a onclick="tabelaRecipiente()" style="cursor: pointer"><strong><i class="material-symbols-outlined">undo</i> Lista de Recipientes</strong></a></p>
     <div class="col-lg-12">
 
-        <form id="form-adicionar-imobiliaria" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Administrativo/SalvarImobiliaria" data-ajax-success="onAdicionarImobiliariaSuccess" role="form" class="php-email-form">
-            <input asp-for="ID" type="hidden" id="idImobiliaria" />
+        <form enctype="multipart/form-data" id="form-adicionar-recipiente" method="post" data-ajax-method="post" data-ajax="true" data-ajax-url="/Administrativo/SalvarRecipiente" data-ajax-success="onAdicionarRecipienteSuccess" role="form" class="php-email-form">
+            <input asp-for="ID" type="hidden" id="idRecipiente" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
 
                 <div class="row">
 
-                    <div class="col-md-4">
-                        <label class="control-label">CNPJ</label>
-                        <input asp-for="CNPJ" class="form-control somenteTexto" id="cnpj" required />
-                        <span asp-validation-for="CNPJ" class="text-danger"></span>
+                    <div class="col-md-6">
+                        <label class="control-label">Descrição</label>
+                        <input asp-for="Descricao" class="form-control somenteTexto" id="descricao" required />
+                        <span asp-validation-for="Descricao" class="text-danger"></span>
                     </div>
-                    <div class="col-md-7">
-                        <label class="control-label">Razao Social</label>
-                        <input asp-for="RazaoSocial" type="text" class="form-control" id="razasocial" required />
-                        <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+                    <div class="col-md-2">
+                        <label class="control-label">Volume</label>
+                        <input asp-for="Volume" type="number" class="form-control" id="volume" required />
+                        <span asp-validation-for="Volume" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label">Quantidade de Reuso</label>
+
+                        <input asp-for="QuantidadeReuso" type="number" class="form-control" id="quantidade" required value="1" />
+
+                        <span asp-validation-for="QuantidadeReuso" class="text-danger"></span>
                     </div>
 
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-4">
-                        <label class="control-label">E-mail</label>
-                        @* <input type="text" class="form-control" name="Email" id="Email" required @Html.DisabledIf(Model.ID>0) /> *@
-                        @if (Model.ID > 0)
-                        {
 
-                            <input asp-for="Email" type="text" class="form-control" id="email" required disabled />
-                        }
-                        else
-                        {
-                            <input asp-for="Email" type="text" class="form-control" id="email" required />
-
-                        }
-
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="control-label">Nome do Responsável</label>
-                        <input asp-for="NomeResponsavel" type="text" class="form-control" id="responsavel" required />
-                        <span asp-validation-for="NomeResponsavel" class="text-danger"></span>
+                    <div class="col-md-12">
+                        <label class="control-label">Observacao</label>
+                        <input asp-for="Observacao" type="text" class="form-control" id="observacao" />
+                        <span asp-validation-for="Observacao" class="text-danger"></span>
                     </div>
                     <div class="col-md-3">
-                        <label class="control-label">Contato do Responsável</label>
-                        <input asp-for="Contato" class="form-control" id="contato" required />
-                        <span asp-validation-for="Contato" class="text-danger"></span>
+                        <br />
+                        @* <label class="control-label">Imagem</label> *@
+                        @* <input asp-for="Imagem" class="form-control" id="imagem" required /> *@
+                        <input type="file" id="imageInputRecipiente" style="display:none" class="form-control" name="photo" accept="image/*" />
+                        @* <button id="adicionaImagem" class="btn-salvar" style="background:#049be3" >Adicionar Imagem</button> *@
+                        <label for="files" id="adicionaImagemRecipiente" class="btn-salvar" style="background:#049be3">Adicionar imagem</label>
+
+                        <input asp-for="Imagem" type="hidden" id="imagemRecipiente" />
+
+                        <span asp-validation-for="Imagem" class="text-danger"></span>
                     </div>
+                    <div class="col-md-3" style="align-items:center">
+                        <img id="imageRecipiente" src="@Model.Imagem64()" style="width:90px; height:90px; border-radius:50%; display:block;margin-left:auto;margin-right:auto; margin-top:10px" />
+
+                    </div>
+
 
                 </div>
                 <br>
@@ -59,7 +63,7 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <button id="cadastrar-investidor" class="btn-salvar" style="background:#049be3" type="submit">Salvar</button>
+                        <button id="cadastrar-recipiente" class="btn-salvar" style="background:#049be3" type="submit">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -71,40 +75,36 @@
 
 <script>
 
-    $(document).ready(function ($) {
-        aplicarMascaras();
+    $(document).ready(function () {
+        $.validator.unobtrusive.parse($("#form-adicionar-recipiente"));
+    });
+
+    $('#adicionaImagemRecipiente').on('click', function () {
+        $('#imageInputRecipiente').click(); return false;
+    });
+
+
+    $("#imageInputRecipiente").change(function () {
+        CarregaElementoImagem(this, '#imageRecipiente');
     });
 
 
 
-    function tabelaRecipiente() {
-        $("#tabela-recipiente").show();
-        $("#formulario-recipiente").hide();
-        limpaFormularioRecipiente();
-    }
+    // function aplicarMascaras() {
+    //     $("#contato").mask("(00) 09999-9999");
+    //     $("#cnpj").mask("09.000.000/0000-00");
+    //     $("#rg").mask("0000000000");
+    //     $("#cep").mask("00000-000");
 
+    //     $("#responsavel").keypress(function (e) {
+    //         var key = e.keyCode;
+    //         if (key >= 48 && key <= 57) {
+    //             e.preventDefault();
+    //         }
+    //     });
+    // }
 
-
-
-
-
-
-
-    function aplicarMascaras() {
-        $("#contato").mask("(00) 09999-9999");
-        $("#cnpj").mask("09.000.000/0000-00");
-        $("#rg").mask("0000000000");
-        $("#cep").mask("00000-000");
-
-        $("#responsavel").keypress(function (e) {
-            var key = e.keyCode;
-            if (key >= 48 && key <= 57) {
-                e.preventDefault();
-            }
-        });
-    }
-
-    function onAdicionarImobiliariaSuccess(response) {
+    function onAdicionarRecipienteSuccess(response) {
         if (response.success) {
             Swal.fire({
                 icon: "success",
@@ -114,7 +114,7 @@
                 confirmButtonText: "OK",
                 confirmButtonColor: "#38be3b",
             }).then(() => {
-                atualizaListaImobiliarias();
+                atualizaListaRecipientes();
             });
 
         }
@@ -125,13 +125,14 @@
 
 
     function limpaFormularioRecipiente() {
-        $("#idImobiliaria").val(0);
-        $("#cnpj").val('');
-        $("#razasocial").val('');
-        $("#email").val('');
+        $("#idRecipiente").val(0);
+        $("#descricao").val('');
+        $("#volume").val('');
+        $("#quantidade").val(1);
         $("#responsavel").val('');
-        $("#contato").val('');
-        $("#email").removeAttr('disabled');
+        $("#observacao").val('');
+        $("#imagemRecipiente").val('');
+        $('#imageRecipiente').attr('src', "");
     }
 
 

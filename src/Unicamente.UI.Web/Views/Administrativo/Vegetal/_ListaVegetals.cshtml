@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Unicamente.UI.Web.Models.VegetalViewModel>
+
+<div class="container" style="padding: 0;">
+    <p style="text-align: left"><a onclick="formularioVegetal()" style="cursor: pointer"><strong><i class="material-symbols-outlined">add</i> Incluir Vegetal</strong></a></p>
+    <ul class="responsive-table" style="padding: 0">
+        <li class="table-header">
+            <div class="col-md-1" style="flex-basis: 7%;"></div>
+            <div class="col" style="flex-basis: 14%;">Descricao</div>
+            <div class="col" style="flex-basis: 0%;">Observacao</div>
+            <div class="col" style="flex-basis: 0%;">Ação</div>
+            @* <div class="col coluna-6-imob"><i class="material-symbols-outlined"><strong>badge</strong></i></div> *@
+        </li>
+        @foreach (var vegetal in Model)
+        {
+            <li class="table-row">
+
+                <div class="col-md-1" style="display: flex;justify-content: center;margin: auto; flex-basis: 0%;text-align: left;">
+                    <img src="data:image/png;base64,@vegetal.Imagem64()" id="imagemVegetal" alt="vegetal" style="width:50px; height:50px; border-radius:50%;" />
+                </div>
+                <div class="col" style="display:block; word-break:break-word; margin: auto; flex-basis: 15%;text-align: left;"><span class="table-label" style="font-weight:bold">Descricao:&nbsp;</span>@vegetal.Descricao</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Observação:&nbsp;</span>@vegetal.Observacao</div>
+                <div class="col" style="justify-content: center; margin: auto; flex-basis: 0%">
+                    <a onclick="detalheVegetal(@vegetal.ID)"><i class="material-symbols-outlined btn-acao-azul"><strong>edit</strong></i></a>
+                    <a onclick="showModalremoverVegetal(@vegetal.ID)"><i class="material-symbols-outlined btn-acao-vermelho"><strong>delete</strong></i></a>
+
+                </div>
+                @* <div class="col coluna-6-imob"><a onclick="brokerFunction()"><i class="material-symbols-outlined broker"><strong>badge</strong></i></a></div> *@
+            </li>
+        }
+
+    </ul>
+
+</div>
+
+<script>
+    function detalheVegetal(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/Administrativo/DetalheVegetal',
+            dataType: 'html',
+            data: { id: id },
+            success: function (result) {
+                $("#formulario-vegetal").html(result);
+                formularioVegetal();
+                aplicarMascaras();
+            }
+        });
+    }
+
+
+
+    function showModalremoverVegetal(id) {
+        Swal.fire({
+            title: "Tem certeza?",
+            text: "Deseja realmente deletar esse item?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, pode deletar!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                removerVegetal(id);
+            }
+        });
+    }
+
+    function removerVegetal(id) {
+        $.ajax({
+            type: 'POST',
+            url: '/Administrativo/DeletarVegetal',
+            data: { id: id },
+            success: function (result) {
+                if (result.sucesso) {
+                    exibirPopupSucesso(result.mensagem);
+                    atualizaListaVegetals();
+
+                }
+                else {
+                    exibirPopupErro(result.mensagem);
+                }
+
+            }
+        });
+    }
+
+
+</script>
+
+
+
+

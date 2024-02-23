@@ -15,39 +15,26 @@ namespace Unicamente.IoC
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,
   IConfiguration configuration)
         {
-            services.AddScoped<IImovelRepository, ImovelRepository>();
-            services.AddScoped<IImovelService, ImovelService>();
 
-            services.AddScoped<ITipoImovelRepository,TipoImovelRepository>();
-            services.AddScoped<ITipoImovelService,TipoImovelService>();
-
-            services.AddScoped<IComodoRepository, ComodoRepository>();
-            services.AddScoped<IComodoService, ComodoService>();
-            
-            services.AddScoped<IComodoImovelRepository, ComodoImovelRepository>();
-            services.AddScoped<IComodoImovelService, ComodoImovelService>();
-
-            services.AddScoped<IInvestidorRepository, InvestidorRepository>();
-            services.AddScoped<IInvestidorService, InvestidorService>();
-
-            services.AddScoped<ICorretorRepository,CorretorRepository>();
-            services.AddScoped<ICorretorService,CorretorService>();
-
-            services.AddScoped<IEmpreendimentoRepository, EmpreendimentoRepository>();
-            services.AddScoped<IEmpreendimentoService, EmpreendimentoService>();
-
-            services.AddScoped<IImobiliariaRepository,ImobiliariaRepository>();
-            services.AddScoped<IImobiliariaService,ImobiliariaService>();
+            services.AddScoped<IImobiliariaRepository, ImobiliariaRepository>();
+            services.AddScoped<IImobiliariaService, ImobiliariaService>();
 
 
+            services.AddScoped<IRecipienteRepository, RecipienteRepository>();
+            services.AddScoped<IRecipienteService, RecipienteService>();
+
+            services.AddScoped<IMaririRepository, MaririRepository>();
+            services.AddScoped<IMaririService, MaririService>();
+
+            services.AddScoped<IChacronaRepository, ChacronaRepository>();
+            services.AddScoped<IChacronaService, ChacronaService>();
+
+            services.AddScoped<IVegetalRepository, VegetalRepository>();
+            services.AddScoped<IVegetalService, VegetalService>();
 
             services.AddScoped<IConnectionFactory, DefaultSqlConnectionFactory>();
             services.AddScoped<ICorreios, Correios>();
 
-
-
-
-            services.AddScoped<ILoginService, LoginService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
             return services;

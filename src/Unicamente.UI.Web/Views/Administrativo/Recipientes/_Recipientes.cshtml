@@ -10,61 +10,50 @@
 
         <div id="tabela-recipiente">
 
-            <partial name="_ListaRecipientes.cshtml" model="@Model.Imobiliarias" />
+            <partial name="_ListaRecipientes.cshtml" model="@Model.Recipientes" />
         </div>
 
         <div id="formulario-recipiente" style="display:none">
-            <partial name="_FormularioRecipiente.cshtml" model="@Model.Imobiliaria" />
+            <partial name="_FormularioRecipiente.cshtml" model="@Model.Recipiente" />
         </div>
 
     </div>
 
 
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+@* <script src="~/js/jquery.min.js"></script>
+<script src="~/js/jquery.inputmask.js"></script> *@
+
+@* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script> *@
 <script>
 
-    // function tabelaImob() {
-    //     $("#tabela-imobiliaria").show();
-    //     $("#formulario-imobiliaria").hide();
-    //     limpaFormulario();
-    // }
 
 
-    // function formularioImob() {
-    //     $("#tabela-imobiliaria").hide();
-    //     $("#formulario-imobiliaria").show();
-
-    // }
-
-
-    // function detalheImobiliaria(id) {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: '/Administrativo/DetalheImobiliaria',
-    //         dataType: 'html',
-    //         data: { id: id },
-    //         success: function (result) {
-    //             $("#formulario-imobiliaria").html(result);
-    //             formularioImob();
-    //             aplicarMascaras();
-    //         }
-    //     });
-    // }
-
-    function atualizaListaImobiliarias() {
+    function atualizaListaRecipientes() {
         $.ajax({
             type: 'GET',
-            url: '/Administrativo/ListaImobiliarias',
+            url: '/Administrativo/ListaRecipientes',
             // dataType: 'html',
             success: function (data) {
-                $("#tabela-imobiliaria").html('');
-                $("#tabela-imobiliaria").html(data);
-                tabelaImob();
+                $("#tabela-recipiente").html('');
+                $("#tabela-recipiente").html(data);
+                tabelaRecipiente();
 
             }
         });
+    }
+
+    function tabelaRecipiente() {
+        $("#tabela-recipiente").show();
+        $("#formulario-recipiente").hide();
+        limpaFormularioRecipiente();
+    }
+
+    function formularioRecipiente() {
+        $("#tabela-recipiente").hide();
+        $("#formulario-recipiente").show();
+
     }
 
 

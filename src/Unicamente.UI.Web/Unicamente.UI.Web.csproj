@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\_Login2.cshtml" />
-    <Content Remove="Views\Home\_TabsSpe.cshtml" />
     <Content Remove="wwwroot\img\Logo Oskem 02 - Copia.png" />
   </ItemGroup>
 
@@ -26,8 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Enums\" />
-    <Folder Include="Views\Administrativo\Mariri\" />
-    <Folder Include="Views\Administrativo\Chacrona\" />
     <Folder Include="wwwroot\css\NewFolder\" />
     <Folder Include="wwwroot\js\Sidebar\" />
   </ItemGroup>

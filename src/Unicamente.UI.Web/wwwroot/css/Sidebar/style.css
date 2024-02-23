@@ -11502,7 +11502,7 @@ h1, h2, h3, h4, h5,
     /*position:fixed*/
     /*background-color: rgba(56,190,59,0.7);*/
     /*background-color: rgba(56,190,59,0.7);*/
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.4);
     color: #fff;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -12190,7 +12190,7 @@ a[data-toggle="collapse"] {
 
 @media all and (max-width: 767px) {
     .responsive-table .table-label {
-        display: block;
+        display: contents;
         font-weight: bold;
     }
 

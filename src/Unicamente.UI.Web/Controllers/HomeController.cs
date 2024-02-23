@@ -14,16 +14,12 @@ namespace Unicamente.UI.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IImovelService _imovelService;
         private readonly IMapper _mapper;
-        private readonly IInvestidorService _investidorService;
 
-        public HomeController(ILogger<HomeController> logger, IImovelService imovelService, IMapper mapper, IInvestidorService investidor)
+        public HomeController(ILogger<HomeController> logger,   IMapper mapper)
         {
             _logger = logger;
-            _imovelService = imovelService;
             _mapper = mapper;
-            _investidorService = investidor;
         }
 
         public IActionResult Index()
@@ -48,38 +44,38 @@ namespace Unicamente.UI.Web.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult EmailContato(EmailContatoViewModel contato)
-        {
-            try
-            {
-                _investidorService.EnviaEmailContato(contato.Nome, contato.Email, contato.Telefone, contato.Assunto, contato.Mensagem);
+        //[HttpPost]
+        //public IActionResult EmailContato(EmailContatoViewModel contato)
+        //{
+        //    try
+        //    {
+        //        _investidorService.EnviaEmailContato(contato.Nome, contato.Email, contato.Telefone, contato.Assunto, contato.Mensagem);
 
-                return Json(new { success = true, icone = "success", titulo = "Recebemos sua mensagem!", mensagem = "Aguarde que em breve um especialista entrará em contato." });
+        //        return Json(new { success = true, icone = "success", titulo = "Recebemos sua mensagem!", mensagem = "Aguarde que em breve um especialista entrará em contato." });
 
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                return Json(new { success = false, message = ex.Message });
-            }
-        }
+        //        return Json(new { success = false, message = ex.Message });
+        //    }
+        //}
 
 
-        [HttpPost]
-        public IActionResult Imovel(ImovelViewModel imovel)
-        {
-            var imovelDto = _mapper.Map<ImovelDTO>(imovel);
-            _imovelService.Add(imovelDto);
+        //[HttpPost]
+        //public IActionResult Imovel(ImovelViewModel imovel)
+        //{
+        //    var imovelDto = _mapper.Map<ImovelDTO>(imovel);
+        //    _imovelService.Add(imovelDto);
 
-            return RedirectToAction("Imovel");
-        }
+        //    return RedirectToAction("Imovel");
+        //}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
 
 
     }
