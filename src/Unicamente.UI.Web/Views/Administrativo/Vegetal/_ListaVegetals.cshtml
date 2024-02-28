@@ -6,7 +6,10 @@
         <li class="table-header">
             <div class="col-md-1" style="flex-basis: 7%;"></div>
             <div class="col" style="flex-basis: 14%;">Descricao</div>
-            <div class="col" style="flex-basis: 0%;">Observacao</div>
+            <div class="col" style="flex-basis: 0%;">Mestre do Preparo</div>
+            <div class="col" style="flex-basis: 0%;">Data Preparo</div>
+            <div class="col" style="flex-basis: 0%;">Mariri</div>
+            <div class="col" style="flex-basis: 0%;">Chacrona</div>
             <div class="col" style="flex-basis: 0%;">Ação</div>
             @* <div class="col coluna-6-imob"><i class="material-symbols-outlined"><strong>badge</strong></i></div> *@
         </li>
@@ -17,8 +20,13 @@
                 <div class="col-md-1" style="display: flex;justify-content: center;margin: auto; flex-basis: 0%;text-align: left;">
                     <img src="data:image/png;base64,@vegetal.Imagem64()" id="imagemVegetal" alt="vegetal" style="width:50px; height:50px; border-radius:50%;" />
                 </div>
-                <div class="col" style="display:block; word-break:break-word; margin: auto; flex-basis: 15%;text-align: left;"><span class="table-label" style="font-weight:bold">Descricao:&nbsp;</span>@vegetal.Descricao</div>
-                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Observação:&nbsp;</span>@vegetal.Observacao</div>
+                <div class="col" style="display:block; word-break:break-word; margin: auto; flex-basis: 14%;text-align: left;"><span class="table-label" style="font-weight:bold">Descricao:&nbsp;</span>@vegetal.Descricao</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">M. Preparo:&nbsp;</span>@vegetal.MestrePreparo</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;">
+                    <span class="table-label" style="font-weight:bold">Data:&nbsp;</span>@vegetal.DataPreparo.ToString("dd/MM/yyyy")</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Mariri:&nbsp;</span>@vegetal.Mariri.Descricao</div>
+                <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Chacrona:&nbsp;</span>@vegetal.Chacrona.Descricao</div>
+                @* <div class="col" style="display:block;word-break:break-word;margin: auto; flex-basis: 0%;text-align: left;"><span class="table-label" style="font-weight:bold">Observação:&nbsp;</span>@vegetal.Observacao</div> *@
                 <div class="col" style="justify-content: center; margin: auto; flex-basis: 0%">
                     <a onclick="detalheVegetal(@vegetal.ID)"><i class="material-symbols-outlined btn-acao-azul"><strong>edit</strong></i></a>
                     <a onclick="showModalremoverVegetal(@vegetal.ID)"><i class="material-symbols-outlined btn-acao-vermelho"><strong>delete</strong></i></a>

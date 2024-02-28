@@ -14,14 +14,46 @@
 
                     <div class="col-md-6">
                         <label class="control-label">Descrição</label>
-                        <input asp-for="Descricao" class="form-control somenteTexto" id="descricaoVegetal" required />
+                        <input asp-for="Descricao" class="form-control" id="descricaoVegetal" required />
                         <span asp-validation-for="Descricao" class="text-danger"></span>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <label class="control-label">Mestre do Preparo</label>
                         <input asp-for="MestrePreparo" class="form-control somenteTexto" id="mestrePreparo" required />
                         <span asp-validation-for="MestrePreparo" class="text-danger"></span>
+                    </div>
+
+
+         
+
+                </div>
+                <br>
+
+                <div class="row">
+
+
+
+
+
+                    <div class="col-md-3">
+
+
+                        <label class="control-label">Mariri</label>
+                        <select asp-for="Mariri.ID" asp-items="@ViewBag.Mariris" class="form-control" id="idMariri" required>
+                            <option value="0" selected="selected">Selecione...</option>
+                        </select>
+
+                        <span asp-validation-for="Mariri.ID" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label">Chacrona</label>
+                        <select asp-for="Chacrona.ID" asp-items="@ViewBag.Chacronas" class="form-control" id="idChacrona" required>
+                            <option selected>Selecione...</option>
+                        </select>
+
+                        <span asp-validation-for="Chacrona.ID" class="text-danger"></span>
                     </div>
 
 
@@ -31,21 +63,6 @@
                         <span asp-validation-for="DataPreparo" class="text-danger"></span>
                     </div>
 
-                </div>
-                <br>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <label class="control-label">Mariri</label>
-                        <input asp-for="IDMariri" class="form-control somenteTexto" id="idMariri" required />
-                        <span asp-validation-for="IDMariri" class="text-danger"></span>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label class="control-label">Chacrona</label>
-                        <input asp-for="IDChacrona" class="form-control somenteTexto" id="idChacrona" required />
-                        <span asp-validation-for="IDChacrona" class="text-danger"></span>
-                    </div>
                 </div>
 
 
@@ -112,7 +129,7 @@
     // }
 
     $("#imageInputVegetal").change(function () {
-        readURL(this);
+        // readURL(this);
         CarregaElementoImagem(this, '#imageVegetal');
     });
 
@@ -166,6 +183,10 @@
         $("#observacaoVegetal").val('');
         $("#imagemVegetal").val('');
         $('#imageVegetal').attr('src', "");
+        $("#idMariri option").removeAttr("selected");
+        $('#idMariri option[value=0]').prop("selected", true);        
+        $("#idChacrona option").removeAttr("selected");
+        $('#idChacrona option[value=0]').prop("selected", true);
     }
 
 

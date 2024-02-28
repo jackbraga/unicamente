@@ -13,8 +13,12 @@ namespace Unicamente.Application.DTOs
 
         public string MestrePreparo { get; set; }
         public DateTime DataPreparo { get; set; }
-        public int IDMariri { get; set; }
-        public int IDChacrona { get; set; }
+
+        public MaririDTO Mariri { get; set; }
+
+        public ChacronaDTO Chacrona { get; set; }
+        //public int IDMariri { get; set; }
+        //public int IDChacrona { get; set; }
         public string Observacao { get; set; }
         public byte[] Imagem { get; set; }
     }

@@ -4,6 +4,7 @@ namespace Unicamente.UI.Web.Models
 {
     public class ChacronaViewModel
     {
+        [Range(1, int.MaxValue, ErrorMessage = "Selecione uma Chacrona da lista")]
         public int ID { get; set; }
 
         [RegularExpression("^[a-zA-Z\\u00C0-\\u017F\\s]+$", ErrorMessage = "Digite um nome válido")]

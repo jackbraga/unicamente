@@ -1,11 +1,3 @@
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.csproj.AssemblyReference.cache
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.AssemblyInfoInputs.cache
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.AssemblyInfo.cs
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.csproj.CoreCompileInputs.cache
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.MvcApplicationPartsAssemblyInfo.cache
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.RazorAssemblyInfo.cache
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.RazorAssemblyInfo.cs
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\wwwroot\img\email\ativaconta.jpeg
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\appsettings.Development.json
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\appsettings.json
@@ -578,6 +570,15 @@ D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\Unicamente.Applicati
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\Unicamente.IoC.pdb
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\Unicamente.Domain.pdb
 D:\Github\unicamente\src\Unicamente.UI.Web\bin\Debug\net7.0\Unicamente.Repository.pdb
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.csproj.AssemblyReference.cache
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.AssemblyInfoInputs.cache
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.AssemblyInfo.cs
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.csproj.CoreCompileInputs.cache
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.MvcApplicationPartsAssemblyInfo.cs
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.RazorAssemblyInfo.cache
+D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.RazorAssemblyInfo.cs
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\staticwebassets\msbuild.Unicamente.UI.Web.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.Unicamente.UI.Web.props
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Unicamente.UI.Web.props
@@ -595,4 +596,3 @@ D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\refint\Unicamente.UI
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.pdb
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.genruntimeconfig.cache
 D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\ref\Unicamente.UI.Web.dll
-D:\Github\unicamente\src\Unicamente.UI.Web\obj\Debug\net7.0\Unicamente.UI.Web.MvcApplicationPartsAssemblyInfo.cs

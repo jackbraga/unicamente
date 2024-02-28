@@ -4,6 +4,8 @@ namespace Unicamente.UI.Web.Models
 {
     public class MaririViewModel
     {
+        [Range(1, int.MaxValue, ErrorMessage = "Selecione um Mariri da lista")]
+
         public int ID { get; set; }
 
         [RegularExpression("^[a-zA-Z\\u00C0-\\u017F\\s]+$", ErrorMessage = "Digite um nome válido")]

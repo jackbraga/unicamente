@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Unicamente.Application.DTOs;
 using Unicamente.Application.ExternalServices.Correios;
 using Unicamente.Application.Interfaces;
@@ -51,16 +52,19 @@ namespace Unicamente.UI.Web.Controllers
             var mariris = _maririService.GetAll();
             administrativoViewModel.Mariris = _mapper.Map<IEnumerable<MaririViewModel>>(mariris);
             administrativoViewModel.Mariri = new MaririViewModel();
+            ViewBag.Mariris = new SelectList(administrativoViewModel.Mariris, "ID", "Descricao");
+
 
             var chacronas = _chacronaService.GetAll();
             administrativoViewModel.Chacronas = _mapper.Map<IEnumerable<ChacronaViewModel>>(chacronas);
             administrativoViewModel.Chacrona = new ChacronaViewModel();
-
+            ViewBag.Chacronas = new SelectList(administrativoViewModel.Chacronas, "ID", "Descricao");
 
 
             var vegetals = _vegetalService.GetAll();
             administrativoViewModel.Vegetals = _mapper.Map<IEnumerable<VegetalViewModel>>(vegetals);
             administrativoViewModel.Vegetal = new VegetalViewModel();
+            
 
             //var imobiliarias = _imobiliariaService.GetAll();
             //administrativoViewModel.Imobiliaria = new ImobiliariaViewModel();
@@ -452,6 +456,14 @@ namespace Unicamente.UI.Web.Controllers
 
                 var vegetal = _vegetalService.GetById(id);
                 vegetalViewModel = _mapper.Map<VegetalViewModel>(vegetal);
+
+                //ViewBag.Mariris = new SelectList(administrativoViewModel.Mariris, "ID", "Descricao",);
+
+
+
+                //ViewBag.Chacronas = ViewBag.Chacronas
+                ViewBag.Mariris = new SelectList(_maririService.GetAll(), "ID", "Descricao",vegetal.Mariri.ID);
+                ViewBag.Chacronas = new SelectList(_chacronaService.GetAll(), "ID", "Descricao",vegetal.Chacrona.ID);
                 return PartialView("~/Views/Administrativo/Vegetal/_FormularioVegetal.cshtml", vegetalViewModel);
 
             }
@@ -468,7 +480,7 @@ namespace Unicamente.UI.Web.Controllers
         {
             try
             {
-                var listaDTO = _chacronaService.GetAll();
+                var listaDTO = _vegetalService.GetAll();
                 var listaViewModel = _mapper.Map<IEnumerable<VegetalViewModel>>(listaDTO);
                 return PartialView("~/Views/Administrativo/Vegetal/_ListaVegetals.cshtml", listaViewModel);
 

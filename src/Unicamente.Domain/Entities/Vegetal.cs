@@ -13,8 +13,12 @@ namespace Unicamente.Domain.Entities
 
         public string MestrePreparo { get; set; }
         public DateTime DataPreparo { get; set; }
-        public int IDMariri { get; set; }
-        public int IDChacrona { get; set; }
+        
+        public Mariri Mariri { get; set; }
+        public Chacrona Chacrona { get; set; }
+        
+        //public int IDMariri { get; set; }
+        //public int IDChacrona { get; set; }
         public string Observacao { get; set; }
         public byte[] Imagem { get; set; }
     }
